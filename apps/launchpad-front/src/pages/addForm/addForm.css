@@ -1,0 +1,28 @@
+.addFormMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+}
+
+.MuiTabs-indicator {
+    border-radius: 30px 30px 0 0;
+    height: 7px !important;
+    background: linear-gradient(255.52deg, #0294AB -173.55%, #0294AB 71.9%, rgba(60, 89, 190, 0.7) 117.57%);
+}
+
+.tabNum {
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    min-width: 33.3% !important;
+    color: white !important;
+    text-transform: capitalize !important;
+}
+
+.MuiTabs-flexContainer {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+}

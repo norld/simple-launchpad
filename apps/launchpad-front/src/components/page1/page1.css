@@ -1,0 +1,28 @@
+.uploadFile {
+    margin: .5em 0 1em 0;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    border: 2px dashed rgba(255, 255, 255, 1);
+    height: 50vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #FFFFFF;
+    opacity: 0.4;
+}
+
+.addDescription{
+    margin: .5em 0 0 0;
+    width: 100%;
+    border: none;
+    color:white;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    resize: none;
+    padding: .5em;
+}
+.h3em {
+    height: 3em;
+}
