@@ -1,10 +1,10 @@
 {
-  "name": "be-launchpad",
+  "name": "launchpad-be",
   "private": true,
-  "version": "0.1.0",
-  "description": "Backend for launchpad data management",
+  "version": "1.0.0",
+  "description": "Backend launchpad for launchpad data management",
   "scripts": {
-    "develop": "strapi develop",
+    "dev": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi",
