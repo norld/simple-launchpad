@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chains",
+  "info": {
+    "singularName": "chain",
+    "pluralName": "chains",
+    "displayName": "Chain",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ChainID": {
+      "type": "integer"
+    },
+    "ChainName": {
+      "type": "string"
+    },
+    "ChainLogo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

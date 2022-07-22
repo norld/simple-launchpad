@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "token_infos",
+  "info": {
+    "singularName": "token-info",
+    "pluralName": "token-infos",
+    "displayName": "Token Info",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "TokenAddress": {
+      "type": "string"
+    },
+    "TokenSymbol": {
+      "type": "string"
+    },
+    "TokenDecimal": {
+      "type": "integer"
+    },
+    "TokenTotalSupply": {
+      "type": "string"
+    },
+    "TokenName": {
+      "type": "string"
+    },
+    "TokenDescription": {
+      "type": "string"
+    },
+    "TokenLogo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Link": {
+      "type": "json"
+    },
+    "chain": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::chain.chain"
+    },
+    "TokenForPresale": {
+      "type": "string"
+    },
+    "TokenForLiquidity": {
+      "type": "string"
+    }
+  }
+}

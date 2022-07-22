@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "launchpads",
+  "info": {
+    "singularName": "launchpad",
+    "pluralName": "launchpads",
+    "displayName": "Launchpad",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "StatusType": {
+      "type": "json",
+      "required": true
+    },
+    "Softcap": {
+      "type": "string"
+    },
+    "Hardcap": {
+      "type": "string"
+    },
+    "MinContribution": {
+      "type": "string"
+    },
+    "MaxContribution": {
+      "type": "string"
+    },
+    "VerifiedAt": {
+      "type": "datetime"
+    },
+    "Currency": {
+      "type": "string"
+    },
+    "Listing": {
+      "type": "string"
+    },
+    "PriceIDO": {
+      "type": "string"
+    },
+    "PriceLaunch": {
+      "type": "string"
+    },
+    "SaleType": {
+      "type": "string"
+    },
+    "LaunchDate": {
+      "type": "datetime"
+    },
+    "token": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::token-info.token-info"
+    },
+    "EndDate": {
+      "type": "datetime"
+    },
+    "PoolAddress": {
+      "type": "string"
+    },
+    "ExchangeDecimal": {
+      "type": "biginteger"
+    },
+    "ExchangeToken": {
+      "type": "string"
+    }
+  }
+}
