@@ -1,9 +1,7 @@
 import { applyMiddleware, compose, createStore } from 'redux';
-
 import createSagaMiddleware from 'redux-saga';
-// import { createWrapper } from 'next-redux-wrapper';
 import rootReducer from './reducers';
-import thunk from 'redux-thunk'
+import thunk from 'redux-thunk';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -16,4 +14,3 @@ export const enhancers = composeEnhancers(applyMiddleware(sagaMiddleware));
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 export default store;
-

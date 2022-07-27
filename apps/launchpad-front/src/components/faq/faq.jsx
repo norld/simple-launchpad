@@ -1,5 +1,5 @@
-import React from "react";
-import { Row, Col } from "react-bootstrap";
+import React from 'react';
+import { Row, Col } from 'react-bootstrap';
 
 function FAQ() {
   return (
@@ -7,23 +7,23 @@ function FAQ() {
       <span
         style={{
           background:
-            "linear-gradient(96.51deg, #FF7171 2.96%, rgba(222, 28, 109, 0.78) 55.12%)",
-          backgroundClip: "text",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-          textFillColor: "transparent",
-          fontSize: "2.4em",
-          fontStyle: "normal",
-          fontWeight: "900",
-          fontFamily: "Montserrat",
-          lineHeight: "140%",
+            'linear-gradient(96.51deg, var(--primary-rgb) 2.96%, var(--secondary-rgb) 55.12%',
+          backgroundClip: 'text',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          textFillColor: 'transparent',
+          fontSize: '2.4em',
+          fontStyle: 'normal',
+          fontWeight: '900',
+          fontFamily: 'Montserrat',
+          lineHeight: '140%',
         }}
         className="my-3"
       >
         FAQ
       </span>
       <Col lg={6}>
-        <div className="tabs" style={{ background: "rgba(255,255,255,0.1)" }}>
+        <div className="tabs" style={{ background: 'rgba(255,255,255,0.1)' }}>
           <div className="tab">
             <input type="checkbox" className="accordion" id="chck1" />
             <label className="tab-label" htmlFor="chck1">
@@ -39,7 +39,13 @@ function FAQ() {
             <label className="tab-label" htmlFor="chck3">
               #2 What are the steps of an IDO?
             </label>
-            <div className="tab-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, reprehenderit? Qui sint numquam cum exercitationem dolores quibusdam reprehenderit, molestiae, alias est laudantium dignissimos magni optio temporibus! Ipsam reiciendis veniam explicabo.</div>
+            <div className="tab-content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure,
+              reprehenderit? Qui sint numquam cum exercitationem dolores
+              quibusdam reprehenderit, molestiae, alias est laudantium
+              dignissimos magni optio temporibus! Ipsam reiciendis veniam
+              explicabo.
+            </div>
           </div>
           <div className="tab">
             <input type="checkbox" className="accordion" id="chck5" />
@@ -47,7 +53,13 @@ function FAQ() {
               #3 What is First Come First Serve (FCFS) sale? And who can
               participate in it?
             </label>
-            <div className="tab-content d-flex" style={{ flexDirection:"column", justifyContent: "space-between"  }}>
+            <div
+              className="tab-content d-flex"
+              style={{
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+              }}
+            >
               <span>
                 If a pool is not sold out, FCFS round opens 20 minutes before
                 the sale end.
@@ -76,7 +88,7 @@ function FAQ() {
         </div>
       </Col>
       <Col lg={6}>
-        <div className="tabs" style={{ background: "rgba(255,255,255,0.1)" }}>
+        <div className="tabs" style={{ background: 'rgba(255,255,255,0.1)' }}>
           <div className="tab">
             <input type="checkbox" className="accordion" id="chck6" />
             <label className="tab-label" htmlFor="chck6">

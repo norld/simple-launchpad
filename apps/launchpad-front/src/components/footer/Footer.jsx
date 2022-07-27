@@ -1,24 +1,42 @@
-// import { Input } from "@mui/material";
-import React from "react";
-import { Row, Col } from "react-bootstrap";
-import dooit from "../../assets/Iconsdooit.svg";
-import telegram from "../../assets/Iconstelegram.svg";
-import twitter from "../../assets/Iconstwitter.svg";
-import discord from "../../assets/Iconsdiscord.svg";
-import fb from "../../assets/Iconsfb.svg";
-import bscScan from "../../assets/bscScanLogo.svg";
-
-// import msg from "../../assets/Iconsmsg.svg";
+import React from 'react';
+import { Row, Col } from 'react-bootstrap';
+import logo from 'assets/logo.png';
+import telegram from 'assets/Iconstelegram.svg';
+import twitter from 'assets/Iconstwitter.svg';
+import discord from 'assets/Iconsdiscord.svg';
+import facebook from 'assets/Iconsfb.svg';
+import bscScan from 'assets/bsc-scan-logo.svg';
+const data = {
+  twitter: {
+    icon: twitter,
+    link: 'https://twitter.com/tokendooit',
+  },
+  discord: {
+    icon: discord,
+    link: 'https://twitter.com/tokendooit',
+  },
+  telegram: {
+    icon: telegram,
+    link: 'https://twitter.com/tokendooit',
+  },
+  bscScan: {
+    icon: bscScan,
+    link: 'https://twitter.com/tokendooit',
+  },
+  facebook: {
+    icon: facebook,
+    link: 'https://www.facebook.com/tokendooit/',
+  },
+};
 
 function Footer() {
   return (
     <>
-      <div
-        style={{ background: 'rgba(102, 51, 153, 0.2)', padding: '3rem 7rem' }}
-      >
+      <div className="container">
         <Row sm={12} className="pb-5">
           <Col lg={3}>
-            <img src={dooit} alt="dooit logo" />
+            <img src={logo} alt="logo" style={{ width: '50px' }} />{' '}
+            <span className="text-white"> Launchpad</span>
           </Col>
           <Col lg={6}>
             <span style={{ color: 'white' }}>
@@ -27,26 +45,20 @@ function Footer() {
             </span>
           </Col>
           <Col lg={3}>
-            <a className="socmedLink" href="https://twitter.com/tokendooit">
-              <img src={twitter} alt="twitterIcon" />
+            <a className="socmedLink" href={data.twitter.link}>
+              <img src={data.twitter.icon} alt="twitterIcon" />
             </a>
-            <a className="socmedLink" href="https://twitter.com/tokendooit">
-              <img src={discord} alt="discordIcon" />
+            <a className="socmedLink" href={data.discord.link}>
+              <img src={data.discord.icon} alt="discordIcon" />
             </a>
-            <a className="socmedLink" href="https://twitter.com/tokendooit">
-              <img src={telegram} alt="telegramIcon" />
+            <a className="socmedLink" href={data.telegram.link}>
+              <img src={data.telegram.icon} alt="telegramIcon" />
             </a>
-            <a
-              className="socmedLink"
-              href="https://bscscan.com/token/0x93a72ce957adaf60c74a5c7815ce7b3d0a7e6b48"
-            >
-              <img src={bscScan} alt="bscScanIcon" />
+            <a className="socmedLink" href={data.bscScan.link}>
+              <img src={data.bscScan.icon} alt="bscScanIcon" />
             </a>
-            <a
-              className="socmedLink"
-              href="https://www.facebook.com/tokendooit/"
-            >
-              <img src={fb} alt="fbIcon" />
+            <a className="socmedLink" href={data.facebook.link}>
+              <img src={data.facebook.icon} alt="fbIcon" />
             </a>
           </Col>
         </Row>
@@ -176,7 +188,9 @@ function Footer() {
         >
           <Col lg={4}>
             <span style={{ color: 'white' }}>
-              Copyright ©2022 DOOiT Launchpad
+              Copyright ©
+              <script>document.write(new Date().getFullYear()</script>
+              Launchpad
             </span>
           </Col>
           <Col

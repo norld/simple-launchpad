@@ -1,137 +1,142 @@
 .main {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row-reverse;
-    padding: 5vh;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  padding: 5vh;
 }
 
 .presaleColumn {
-    min-width: 20vw;
-    /* width: 50vw; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-grow: 1;
-    margin: 0 0.3em;
+  min-width: 20vw;
+  /* width: 50vw; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  margin: 0 0.3em;
 }
 .statusText {
-    margin: 0.6em 0;
-    color: #fff;
-    font-family: 'Montserrat';
+  margin: 0.6em 0;
+  color: #fff;
+  font-family: 'Montserrat';
 }
 
 .details {
-    background: rgb(255, 255, 255, 0.1);
-    padding: 1em;
+  background: rgb(255, 255, 255, 0.1);
+  padding: 1em;
 }
 
 .logoAndTitle {
-    display: flex;
+  display: flex;
 }
 
 .logo {
-    margin: 0 0.3em 0 0;
-    max-width: 4em;
+  margin: 0 0.3em 0 0;
+  max-width: 4em;
 }
 
 .title {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .token {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    margin: 0;
-    font-family: 'Montserrat';
-    color: #FFFFFF;
-    opacity: 0.5;
-    font-weight: 600;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin: 0;
+  font-family: 'Montserrat';
+  color: #ffffff;
+  opacity: 0.5;
+  font-weight: 600;
 }
 
 .party {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin: 0;
-    font-family: 'Montserrat';
-    color: white;
-    font-weight: bold;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0;
+  font-family: 'Montserrat';
+  color: white;
+  font-weight: bold;
 }
 
 .description {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    color: #fff;
-    font-family: 'Montserrat';
-    font-weight: 400;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: #fff;
+  font-family: 'Montserrat';
+  font-weight: 400;
 }
 
 .contractLink {
-    color: white;
-    font-family: 'Montserrat';
-    margin: 0.5em;
+  color: white;
+  font-family: 'Montserrat';
+  margin: 0.5em;
 }
 
 .buttonBox {
-    display: flex;
-    margin: 0.7em 0;
-    flex-wrap: wrap;
+  display: flex;
+  margin: 0.7em 0;
+  flex-wrap: wrap;
 }
 
 .button {
-    background: linear-gradient(255.52deg, rgba(2, 148, 171, 0.4) -173.55%, rgba(2, 148, 171, 0.4) 71.9%, rgba(60, 89, 190, 0.28) 117.57%);
-    margin: 0.5em 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    border: 0px solid #000;
+  background: linear-gradient(
+    255.52deg,
+    rgba(2, 148, 171, 0.4) -173.55%,
+    rgba(2, 148, 171, 0.4) 71.9%,
+    rgba(60, 89, 190, 0.28) 117.57%
+  );
+  margin: 0.5em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border: 0px solid #000;
 }
 
 .button:not(:first-child) {
-    margin-right: 0.5em;
+  margin-right: 0.5em;
 }
 
 .button:first-child {
-    margin-left: 0;
-    margin-right: 0.5em;
+  margin-left: 0;
+  margin-right: 0.5em;
 }
 
 .socmedLink {
-    margin: 0.7em;
+  margin: 0.7em;
 }
 
 .socmedLink:first-child {
-    margin-left: 0;
+  margin-left: 0;
 }
 
 .detailsTitle {
-    font-family: 'Montserrat';
-    font-weight: 600;
-    display: inline-block;
-    margin-left: 0.5em;
-    margin-top: 4vh;
-    background-image: linear-gradient(157deg, #D7DDE8, #757F9A);
+  font-family: 'Montserrat';
+  font-weight: 600;
+  display: inline-block;
+  margin-left: 0.5em;
+  margin-top: 4vh;
+  background-image: linear-gradient(157deg, #d7dde8, #757f9a);
 
-    background-clip: text;
-    color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 .detailsInfo {
-    background: rgb(255, 255, 255, 0.1);
+  background: rgb(255, 255, 255, 0.1);
 }
 
-.inputGroup{
+.inputGroup {
   margin: 0px 0px 20px 0px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 8px;
 }
-.inputField{
+.inputField {
   background-color: transparent !important;
   border: none !important;
   color: #fff !important;
@@ -141,82 +146,92 @@
 }
 
 .boxDetail {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 600;
-    font-family: 'Montserrat';
-    word-spacing: 0.1em;
-    margin: 0 .5em;
-    color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-family: 'Montserrat';
+  word-spacing: 0.1em;
+  margin: 0 0.5em;
+  color: #fff;
 }
 
 .boxDetailTitle {
-    color: #84858f;
-    font-size: 14px;
-    margin: 1em 0;
+  color: #84858f;
+  font-size: 14px;
+  margin: 1em 0;
 }
 
 .boxDetailContent {
-    color: #fff;
-    font-size: 14px;
-    margin: 0px;
+  color: #fff;
+  font-size: 14px;
+  margin: 0px;
 }
 
 .presaleStartTimeGMT {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 10px;
-    display: flex;
-    justify-content: flex-end;
-    margin: auto 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 10px;
+  display: flex;
+  justify-content: flex-end;
+  margin: auto 0;
 }
 
 .hr {
-    border: 0;
-    margin: 0.3em;
+  border: 0;
+  margin: 0.3em;
 }
 
 .hr:not(:last-child) {
-    border: 0;
-    background: rgba(255, 255, 255, 0.3);
-    height: 0.1em;
+  border: 0;
+  background: rgba(255, 255, 255, 0.3);
+  height: 0.1em;
 }
 
 .tokenomicInfo {
-    padding: 1em;
-    background: rgb(255, 255, 255, 0.1);
-    display: flex;
-    justify-content: center;
+  padding: 1em;
+  background: rgb(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
 }
 
 .tokenomicImage {
-    max-width: 55vw;
-    max-height: 55vh;
+  max-width: 55vw;
+  max-height: 55vh;
 }
 
 .comingSoonButton {
-    background: linear-gradient(255.52deg, #0294AB -173.55%, #0294AB 71.9%, rgba(60, 89, 190, 0.7) 117.57%);
-    opacity: 0.5;
-    display: flex;
-    color: #fff;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    width: 100%;
-    padding: 12px;
-    border: none;
-    flex: 1;
+  background: linear-gradient(
+    255.52deg,
+    #0294ab -173.55%,
+    #0294ab 71.9%,
+    rgba(60, 89, 190, 0.7) 117.57%
+  );
+  opacity: 0.5;
+  display: flex;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  flex: 1;
 }
 
-.comingSoonText{
-    font-weight: 600;
-    font-size: 15px;
-    font-family: 'Montserrat';
-    margin-bottom: auto 0;
+.comingSoonText {
+  font-weight: 600;
+  font-size: 15px;
+  font-family: 'Montserrat';
+  margin-bottom: auto 0;
 }
-.btn{
-    border-color: transparent;
+.btn {
+  border-color: transparent;
 }
-.bg-button{
-    background:linear-gradient(255.52deg, #0294AB -173.55%, #0294AB 71.9%, rgba(60, 89, 190, 0.7) 117.57%);
+.bg-button {
+  background: linear-gradient(
+    255.52deg,
+    #0294ab -173.55%,
+    #0294ab 71.9%,
+    rgba(60, 89, 190, 0.7) 117.57%
+  );
 }

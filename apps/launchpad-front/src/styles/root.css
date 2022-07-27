@@ -1,0 +1,12 @@
+:root {
+  --primary-rgb: #f7b42c;
+  --secondary-rgb: #fc575e;
+}
+
+.bg-gradient-color {
+  background: linear-gradient(
+    96.51deg,
+    var(--primary-rgb) 2.96%,
+    var(--secondary-rgb) 55.12%
+  );
+}

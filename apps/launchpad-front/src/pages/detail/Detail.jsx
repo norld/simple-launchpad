@@ -2,33 +2,33 @@
 import React, {
   useEffect,
   // useState
-} from "react";
-import "./detail.css";
-import hourglass from "../../assets/Iconshourglass.svg";
-import radar from "../../assets/Iconsradar.svg";
-import doublecheck from "../../assets/Iconsdoublecheck.svg";
-import Box from "@mui/material/Box";
-import bscScan from "../../assets/bscScanLogo.svg";
-import globe from "../../assets/globeLogo.svg";
-import whitepaper from "../../assets/whitepaperLogo.svg";
-import telegram from "../../assets/Iconstelegram.svg";
-import twitter from "../../assets/Iconstwitter.svg";
-import discord from "../../assets/Iconsdiscord.svg";
-import fb from "../../assets/Iconsfb.svg";
-import bnb from "../../assets/bnbLogo.svg";
-import eth from "../../assets/ethLogo.svg";
-import Countdown from "../../components/countdown/Countdown";
-import Buy from "../../components/sidebar/Buy";
-import ClaimButton from "../../components/claim/Claim";
-import api from "../../utils/network/baseUrl.utils";
-import moment from "moment";
-import ProgressBarMenu from "../../components/progressBarMenu/progressBarMenu";
-import { Container, Row, Col } from "react-bootstrap";
-import { useParams } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { getTheProject } from "./storage/detailActions";
-import { launchpad as launchpadABI } from "../../common/abis/launchpad";
-import Footer from "../../components/footer/Footer";
+} from 'react';
+import './detail.css';
+import hourglass from 'assets/Iconshourglass.svg';
+import radar from 'assets/Iconsradar.svg';
+import doublecheck from 'assets/Iconsdoublecheck.svg';
+import Box from '@mui/material/Box';
+import bscScan from 'assets/bsc-scan-logo.svg';
+import globe from 'assets/globeLogo.svg';
+import whitepaper from 'assets/whitepaperLogo.svg';
+import telegram from 'assets/Iconstelegram.svg';
+import twitter from 'assets/Iconstwitter.svg';
+import discord from 'assets/Iconsdiscord.svg';
+import fb from 'assets/Iconsfb.svg';
+import bnb from 'assets/bnb-logo.svg';
+import eth from 'assets/ethLogo.svg';
+import Countdown from 'components/countdown/Countdown';
+import Buy from 'components/sidebar/Buy';
+import ClaimButton from 'components/claim/Claim';
+import api from 'utils/network/baseUrl.utils';
+import moment from 'moment';
+import ProgressBarMenu from 'components/progressBarMenu/progressBarMenu';
+import { Container, Row, Col } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { getTheProject } from './storage/detailActions';
+import { launchpad as launchpadABI } from 'common/abis/launchpad';
+import Footer from 'components/footer/Footer';
 
 function Detail(props) {
   const [counter] = React.useState(60);
@@ -71,15 +71,15 @@ function Detail(props) {
 
   const statusObj = {
     OnSale: {
-      text: "On Sale",
+      text: 'On Sale',
       img: radar,
     },
     ComingSoon: {
-      text: "Coming Soon",
+      text: 'Coming Soon',
       img: hourglass,
     },
     Ended: {
-      text: "Ended",
+      text: 'Ended',
       img: doublecheck,
     },
   };
@@ -87,23 +87,23 @@ function Detail(props) {
   const chainObj = {
     1: {
       img: bnb,
-      cur: "BNB",
-      scan: "bscscan.com",
+      cur: 'BNB',
+      scan: 'bscscan.com',
     },
     2: {
       img: eth,
-      cur: "ETH",
-      scan: "etherscan.io",
+      cur: 'ETH',
+      scan: 'etherscan.io',
     },
     97: {
       img: bnb,
-      cur: "BNB",
-      scan: "testnet.bscscan.com",
+      cur: 'BNB',
+      scan: 'testnet.bscscan.com',
     },
     56: {
       img: bnb,
-      cur: "BNB",
-      scan: "bscscan.com",
+      cur: 'BNB',
+      scan: 'bscscan.com',
     },
   };
 
@@ -116,12 +116,12 @@ function Detail(props) {
               <Col lg={4}>
                 <Box className="my-3">
                   {theProject[0].data.attributes.StatusType[1] ===
-                  "ComingSoon" ? (
+                  'ComingSoon' ? (
                     <>
                       <Countdown item={theProject[0].data} />
                     </>
                   ) : theProject[0].data.attributes.StatusType[1] ===
-                    "OnSale" ? (
+                    'OnSale' ? (
                     <>
                       <Countdown item={theProject[0].data} />
                       <ProgressBarMenu item={theProject[0].data} />
@@ -132,7 +132,7 @@ function Detail(props) {
                       />
                     </>
                   ) : theProject[0].data.attributes.StatusType[1] ===
-                    "Ended" ? (
+                    'Ended' ? (
                     <>
                       <Countdown item={theProject[0].data} />
                       <ProgressBarMenu item={theProject[0].data} />
@@ -158,7 +158,7 @@ function Detail(props) {
                       <p className="boxDetailContent">
                         {Number(
                           theProject[0].data.attributes.MinContribution
-                        ).toLocaleString()}{" "}
+                        ).toLocaleString()}{' '}
                         {theProject[0].data.attributes.Currency}
                       </p>
                     </div>
@@ -168,7 +168,7 @@ function Detail(props) {
                       <p className="boxDetailContent">
                         {Number(
                           theProject[0].data.attributes.MaxContribution
-                        ).toLocaleString()}{" "}
+                        ).toLocaleString()}{' '}
                         {theProject[0].data.attributes.Currency}
                       </p>
                     </div>
@@ -176,7 +176,7 @@ function Detail(props) {
                     <div className="boxDetail">
                       <p className="boxDetailTitle">My Contribution</p>
                       <p className="boxDetailContent">
-                        {receive}{" "}
+                        {receive}{' '}
                         {/* {toSmallUnit(
                           Number(receive),
                           Number(theProject[1].data.attributes.TokenDecimal)
@@ -240,7 +240,7 @@ function Detail(props) {
                     </Box>
                     <Box className="buttonBox my-3">
                       <a
-                        style={{ color: "transparent" }}
+                        style={{ color: 'transparent' }}
                         href={`https://${
                           chainObj[
                             theProject[1].data.attributes.chain.data.attributes
@@ -248,25 +248,25 @@ function Detail(props) {
                           ].scan
                         }/token/${theProject[1].data.attributes.TokenAddress}`}
                       >
-                        <button className="button rounded px-3">
+                        <button className="button rounded px-3 bg-gradient-color">
                           <img src={bscScan} alt="bsc scan logo" />
                           <p className="contractLink">Check Contract</p>
                         </button>
                       </a>
                       <a
-                        style={{ color: "transparent" }}
+                        style={{ color: 'transparent' }}
                         href={theProject[1].data.attributes.Link.Website}
                       >
-                        <button className="button rounded px-3">
+                        <button className="button rounded px-3 bg-gradient-color">
                           <img src={globe} alt="globe logo" />
                           <p className="contractLink">Website</p>
                         </button>
                       </a>
                       <a
-                        style={{ color: "transparent" }}
+                        style={{ color: 'transparent' }}
                         href={theProject[1].data.attributes.Link.Whitepaper}
                       >
-                        <button className="button rounded px-3">
+                        <button className="button rounded px-3 bg-gradient-color">
                           <img src={whitepaper} alt="whitepaper logo" />
                           <p className="contractLink">Whitepaper</p>
                         </button>
@@ -326,13 +326,13 @@ function Detail(props) {
                               <p className="boxDetailContent">
                                 {moment
                                   .utc(theProject[0].data.attributes.LaunchDate)
-                                  .format("MMMM DD, YYYY hh:mm")}{" "}
+                                  .format('MMMM DD, YYYY hh:mm')}{' '}
                                 (UTC)
                               </p>
                               <p className="presaleStartTimeGMT">
                                 {moment(
                                   theProject[0].data.attributes.LaunchDate
-                                ).format("MMMM DD, YYYY hh:mm")}{" "}
+                                ).format('MMMM DD, YYYY hh:mm')}{' '}
                                 (GMT+8)
                               </p>
                             </>
@@ -350,13 +350,13 @@ function Detail(props) {
                               <p className="boxDetailContent">
                                 {moment
                                   .utc(theProject[0].data.attributes.EndDate)
-                                  .format("MMMM DD, YYYY hh:mm")}{" "}
+                                  .format('MMMM DD, YYYY hh:mm')}{' '}
                                 (UTC)
                               </p>
                               <p className="presaleStartTimeGMT">
                                 {moment(
                                   theProject[0].data.attributes.EndDate
-                                ).format("MMMM DD, YYYY hh:mm")}{" "}
+                                ).format('MMMM DD, YYYY hh:mm')}{' '}
                                 (GMT+8)
                               </p>
                             </>
@@ -373,7 +373,7 @@ function Detail(props) {
                             theProject[0].data.attributes.token.data.attributes
                               .TokenForPresale /
                             theProject[0].data.attributes.Hardcap
-                          } ${theProject[1].data.attributes.TokenSymbol}`}{" "}
+                          } ${theProject[1].data.attributes.TokenSymbol}`}{' '}
                         </p>
                       </div>
                       <hr className="hr" />
@@ -382,7 +382,7 @@ function Detail(props) {
                         <p className="boxDetailContent">
                           {Number(
                             theProject[0].data.attributes.Softcap
-                          ).toLocaleString()}{" "}
+                          ).toLocaleString()}{' '}
                         </p>
                       </div>
                       <hr className="hr" />
@@ -391,7 +391,7 @@ function Detail(props) {
                         <p className="boxDetailContent">
                           {Number(
                             theProject[0].data.attributes.Hardcap
-                          ).toLocaleString()}{" "}
+                          ).toLocaleString()}{' '}
                         </p>
                       </div>
                     </div>
@@ -435,7 +435,7 @@ function Detail(props) {
                         <p className="boxDetailContent">
                           {Number(
                             theProject[1].data.attributes.TokenTotalSupply
-                          ).toLocaleString()}{" "}
+                          ).toLocaleString()}{' '}
                         </p>
                       </div>
                     </div>

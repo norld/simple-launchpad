@@ -1,44 +1,38 @@
-import React, { useState, useEffect } from "react";
-import Box from "@mui/material/Box";
-import radar from "../../assets/Iconsradar.svg";
-import hourglass from "../../assets/Iconshourglass.svg";
-import doublecheck from "../../assets/Iconsdoublecheck.svg";
-import check from "../../assets/Iconscheck.svg";
-import add from "../../assets/Iconsadd.svg";
-import community from "../../assets/communityLogo.svg";
-import contract from "../../assets/bscScanLogo.svg";
-import copy from "../../assets/Iconscopy.svg";
-import greenWebsite from "../../assets/greenGlobe.svg";
-import greenWhitepaper from "../../assets/greenWhitepaper.svg";
-import bnb from "../../assets/bnbLogo.svg";
-import bscScan from "../../assets/bscScanLogo.svg";
-import eth from "../../assets/ethLogo.svg";
-import home from "../../assets/home1.svg";
-import "./home.css";
-import ProgressBarMenu from "../../components/progressBarMenu/progressBarMenu";
-import { Container, Row, Col } from "react-bootstrap";
-import { useSelector, useDispatch } from "react-redux";
-import { getProjectsList } from "./storage/homeActions";
-import api from "../../utils/network/baseUrl.utils";
-import moment from "moment";
-// import { ethers } from "ethers";
-// import { launchpad as launchpadABI } from "../../common/abis/launchpad";
-import { useNavigate } from "react-router";
-// import { truncateWalletAddress } from "../../utils/helper/trucateWalletAddress";
-import Footer from "../../components/footer/Footer";
-import { Link } from "react-router-dom";
-import FAQ from "../../components/faq/faq";
-import Description from "../../components/description/Description";
+import React, { useState, useEffect } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import { useSelector, useDispatch } from 'react-redux';
+import { getProjectsList } from './storage/homeActions';
+import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
+import moment from 'moment';
+import api from 'utils/network/baseUrl.utils';
+import ProgressBarMenu from 'components/progressBarMenu/progressBarMenu';
+import Description from 'components/description/Description';
+import Footer from 'components/footer/Footer';
+import FAQ from 'components/faq/faq';
+import Box from '@mui/material/Box';
+import radar from 'assets/Iconsradar.svg';
+import hourglass from 'assets/Iconshourglass.svg';
+import doublecheck from 'assets/Iconsdoublecheck.svg';
+import check from 'assets/Iconscheck.svg';
+import add from 'assets/Iconsadd.svg';
+import community from 'assets/communityLogo.svg';
+import contract from 'assets/bsc-scan-logo.svg';
+import copy from 'assets/Iconscopy.svg';
+import greenWebsite from 'assets/greenGlobe.svg';
+import greenWhitepaper from 'assets/greenWhitepaper.svg';
+import bnb from 'assets/bnb-logo.svg';
+import bscScan from 'assets/bsc-scan-logo.svg';
+import eth from 'assets/ethLogo.svg';
+import home from 'assets/home1.svg';
+import 'styles/root.css';
+import 'styles/home.css';
 
 function Home(props) {
   let navigate = useNavigate();
   const dispatch = useDispatch();
   const [test, setTest] = useState();
   const projects = useSelector((state) => state.homeReducers.projects);
-  // const { ethereum } = window;
-  // const provider = new ethers.providers.Web3Provider(ethereum);
-  // const signer = provider.getSigner();
-
   useEffect(() => {
     dispatch(getProjectsList());
     setTest(true);
@@ -47,17 +41,17 @@ function Home(props) {
 
   const statusObj = {
     OnSale: {
-      text: "On Sale",
+      text: 'On Sale',
       img: radar,
       status: test,
     },
     ComingSoon: {
-      text: "Coming Soon",
+      text: 'Coming Soon',
       img: hourglass,
       status: test,
     },
     Ended: {
-      text: "Ended",
+      text: 'Ended',
       img: doublecheck,
       status: test,
     },
@@ -66,18 +60,18 @@ function Home(props) {
   const chainObj = {
     97: {
       img: bnb,
-      cur: "BNB",
-      scan: "testnet.bscscan.com",
+      cur: 'BNB',
+      scan: 'testnet.bscscan.com',
     },
     56: {
       img: bnb,
-      cur: "BNB",
-      scan: "bscscan.com",
+      cur: 'BNB',
+      scan: 'bscscan.com',
     },
     1: {
       img: eth,
-      cur: "ETH",
-      scan: "etherscan.io",
+      cur: 'ETH',
+      scan: 'etherscan.io',
     },
   };
 
@@ -92,27 +86,27 @@ function Home(props) {
           <Col lg={6}>
             <div
               style={{
-                color: "white",
-                fontFamily: "Montserrat",
-                fontStyle: "normal",
+                color: 'white',
+                fontFamily: 'Montserrat',
+                fontStyle: 'normal',
                 fontWeight: 700,
-                fontSize: "2.5em",
-                lineHeight: "140%",
+                fontSize: '2.5em',
+                lineHeight: '140%',
               }}
             >
-              {" "}
+              {' '}
               <span
                 style={{
                   background:
-                    "linear-gradient(96.51deg, #FF7171 2.96%, rgba(222, 28, 109, 0.78) 55.12%)",
-                  backgroundClip: "text",
-                  textFillColor: "transparent",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
+                    'linear-gradient(96.51deg, var(--primary-rgb) 2.96%, var(--secondary-rgb) 55.12%)',
+                  backgroundClip: 'text',
+                  textFillColor: 'transparent',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
                 }}
               >
                 Trusted
-              </span>{" "}
+              </span>{' '}
               Platform for Crypto Launchpad
             </div>
             <p className="text-white py-3">
@@ -122,30 +116,26 @@ function Home(props) {
             <div className="d-flex flex-wrap my-3">
               <div
                 lg={6}
-                className="rounded d-flex justify-content-center my-auto my-3 me-3"
-                style={{
-                  background:
-                    "linear-gradient(96.51deg, #FF7171 2.96%, rgba(222, 28, 109, 0.78) 55.12%)",
-                }}
+                className="rounded d-flex justify-content-center my-auto my-3 me-3 bg-gradient-color"
               >
                 <Link
                   to="/request"
-                  style={{ color: "white", fontWeight: 700 }}
-                  className="btn"
+                  style={{ color: 'white', fontWeight: 700 }}
+                  className="btn "
                 >
                   <img src={add} alt="add icon" />
                   Apply project
                 </Link>
               </div>
               <a
-                href="https://t.me/tokendooit"
+                href="https://github.com/norld/simple-launchpad"
                 className="row px-3 my-3 align-items-center text-white"
-                style={{ textDecoration: "none" }}
+                style={{ textDecoration: 'none' }}
               >
                 <img
                   src={community}
                   alt="community icon"
-                  style={{ width: "54px", paddingLeft: "0px" }}
+                  style={{ width: '54px', paddingLeft: '0px' }}
                 />
                 Community
               </a>
@@ -163,35 +153,35 @@ function Home(props) {
               src={bscScan}
               alt="bsc scan logo"
               style={{
-                background: "rgba(255, 255, 255, 0.1)",
-                padding: "1rem",
-                borderRadius: "50px",
+                background: 'rgba(255, 255, 255, 0.1)',
+                padding: '1rem',
+                borderRadius: '50px',
               }}
             />
-            <span className="mx-1" style={{ color: "white" }}>
+            <span className="mx-1" style={{ color: 'white' }}>
               Token Contract:
             </span>
             <span
               className="mx-2 my-3 rounded"
               onClick={() =>
                 navigator.clipboard.writeText(
-                  "0x93a72ce957adaf60c74a5c7815ce7b3d0a7e6b48"
+                  '0x93a72ce957adaf60c74a5c7815ce7b3d0a7e6b48'
                 )
               }
               style={{
-                color: "white",
-                background: "rgba(255, 255, 255, 0.1)",
-                padding: "12px 20px",
+                color: 'white',
+                background: 'rgba(255, 255, 255, 0.1)',
+                padding: '12px 20px',
               }}
             >
               {/* {truncateWalletAddress('0x1234567890987654321', 6)} */}
-              {"0x93a72ce957adaf60c74a5c7815ce7b3d0a7e6b48"}
+              {'0x93a72ce957adaf60c74a5c7815ce7b3d0a7e6b48'}
               <img
                 className="rounded"
                 style={{
-                  background: "rgba(255, 255, 255, 0.2)",
-                  marginLeft: ".75em",
-                  cursor: "pointer",
+                  background: 'rgba(255, 255, 255, 0.2)',
+                  marginLeft: '.75em',
+                  cursor: 'pointer',
                 }}
                 src={copy}
                 alt="copy icon"
@@ -212,7 +202,7 @@ function Home(props) {
                   <Col lg={4} key={idx}>
                     <div
                       onClick={() => {
-                        OnDetail("detail/" + item.id);
+                        OnDetail('detail/' + item.id);
                       }}
                       role="button"
                       className="individualBox p-4 rounded pe-pointer my-3"
@@ -232,20 +222,20 @@ function Home(props) {
                         <div className="status2">
                           <img
                             src={
-                              itemAttr.StatusType[0] === "Verify" ? check : ""
+                              itemAttr.StatusType[0] === 'Verify' ? check : ''
                             }
                             alt=""
                           />
                           <p className="statusText">
-                            {itemAttr.StatusType[0] === "Verify"
-                              ? "Audited"
-                              : "Not audited yet"}
+                            {itemAttr.StatusType[0] === 'Verify'
+                              ? 'Audited'
+                              : 'Not audited yet'}
                           </p>
                         </div>
                       </div>
                       <Box className="logoAndTitleBox">
                         <Box className="logoBox">
-                          <div style={{ position: "relative" }}>
+                          <div style={{ position: 'relative' }}>
                             {poolAttr.TokenLogo.data !== null ? (
                               <img
                                 className="w80"
@@ -256,7 +246,7 @@ function Home(props) {
                                 alt="token logo"
                               />
                             ) : (
-                              <img src={""} alt="token zonk" />
+                              <img src={''} alt="token zonk" />
                             )}
                             <img
                               src={
@@ -265,10 +255,10 @@ function Home(props) {
                               }
                               alt="chain logo"
                               style={{
-                                position: "absolute",
-                                bottom: "0",
-                                right: "0",
-                                height: "40px",
+                                position: 'absolute',
+                                bottom: '0',
+                                right: '0',
+                                height: '40px',
                               }}
                             />
                           </div>
@@ -308,24 +298,24 @@ function Home(props) {
                         <div className="boxDetail">
                           <p className="stackingInfoTitle">Soft-Hard</p>
                           <span className="h6">
-                            {itemAttr.Softcap} - {itemAttr.Hardcap}{" "}
+                            {itemAttr.Softcap} - {itemAttr.Hardcap}{' '}
                             {itemAttr.Currency}
                           </span>
                         </div>
                         <div className="boxDetail">
                           <p className="stackingInfoTitle">Starts</p>
                           <p>
-                            {moment(itemAttr.LaunchDate).format("DD-MMM-YYYY")}
+                            {moment(itemAttr.LaunchDate).format('DD-MMM-YYYY')}
                           </p>
                         </div>
                         <div className="boxDetail">
                           <p className="stackingInfoTitle">Price</p>
 
                           <p className="h6">
-                            1 {itemAttr.token.data.attributes.TokenSymbol} ={" "}
+                            1 {itemAttr.token.data.attributes.TokenSymbol} ={' '}
                             {itemAttr.Hardcap /
                               itemAttr.token.data.attributes
-                                .TokenForPresale}{" "} 
+                                .TokenForPresale}{' '}
                             {item.attributes.Currency}
                           </p>
                         </div>

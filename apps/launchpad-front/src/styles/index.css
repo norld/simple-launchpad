@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #0B0547;
+  background-color: #000;
   box-sizing: border-box;
 }
 
@@ -18,7 +18,7 @@ body::before {
   z-index: -1;
   top: 0;
   opacity: 0.8;
-  background: url("../assets/risingSun.png");
+  /* background: url('../assets/risingSun.png'); */
   background-repeat: no-repeat;
 }
 

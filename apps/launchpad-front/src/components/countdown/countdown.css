@@ -1,59 +1,59 @@
 .countdownBox {
-    background: rgba(2, 148, 171, 0.2);
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    color: white;
+  background: rgba(255, 121, 121, 0.3);
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  color: white;
 }
 
-.countdownBoxEnded{
-    background: rgba(255, 113, 113, 0.3);
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    color: white;
+.countdownBoxEnded {
+  background: rgba(255, 121, 121, 0.3);
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  color: white;
 }
 
 .presaleTitle {
-    font-family: 'Roboto';
-    font-size: 1.5em;
-    display: flex;
-    justify-content: center;
-    margin: 0px;
-    color: white;
-    width: 100%;
+  font-family: 'Roboto';
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+  color: white;
+  width: 100%;
 }
 
 .daysAndTime {
-    display: flex;
-    justify-content: space-around;
-    color: white;
+  display: flex;
+  justify-content: space-around;
+  color: white;
 }
 
 .HMS {
-    display: flex;
+  display: flex;
 }
 
 .time {
-    display: flex;
-    flex-direction: column;
-    margin: 0 0.1vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0.1vh;
 }
 
 .number {
-    font-size: 2em;
-    font-weight: bold;
-    font-family: 'Montserrat';
-    margin: 0;
-    display: flex;
-    justify-content: center;
+  font-size: 2em;
+  font-weight: bold;
+  font-family: 'Montserrat';
+  margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .dateInfo {
-    color: rgba(255, 255, 255, 0.4);
-    display: flex;
-    justify-content: flex-end;
-    font-family: 'Montserrat';
-    font-weight: 600;
-    /* font-size: 5vh; */
+  color: rgba(255, 121, 121, 0.3);
+  display: flex;
+  justify-content: flex-end;
+  font-family: 'Montserrat';
+  font-weight: 600;
+  /* font-size: 5vh; */
 }

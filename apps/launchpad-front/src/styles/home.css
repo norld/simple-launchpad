@@ -1,0 +1,281 @@
+.homeMain {
+  display: flex;
+  flex-direction: column;
+  margin: 2vw 9vh;
+  flex-wrap: wrap;
+}
+
+.addLaunchpad {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1em 2em;
+}
+
+.addLaunchpadButton {
+  background: linear-gradient(
+    255.52deg,
+    #0294ab -173.55%,
+    #0294ab 71.9%,
+    rgba(60, 89, 190, 0.7) 117.57%
+  );
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  border-radius: 20px;
+  padding: 1.5vh;
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-size: 0.8em;
+  color: white;
+}
+
+.projectsBox {
+  margin: 2vw 0;
+  /* min-width: 90vw; */
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  /* justify-content: center; */
+}
+
+.individualBox {
+  /* border: 1px solid blue; */
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.statuses {
+  display: flex;
+  justify-content: space-between;
+}
+
+.statusOnSale,
+.statusComingSoon,
+.statusEnded {
+  border-radius: 100px;
+  padding: 4px 8px;
+}
+
+.statusOnSale {
+  background: rgba(20, 163, 139, 0.5);
+}
+
+.statusComingSoon {
+  background: rgba(255, 251, 0, 0.5);
+}
+
+.statusEnded {
+  background: rgba(255, 113, 113, 0.5);
+}
+
+.status2 {
+  display: flex;
+  min-width: 4.5vw;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.statusText {
+  color: white;
+  margin: 0px;
+  font-size: 14px;
+  padding-left: 4px;
+}
+
+.logoAndTitleBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.logoBox {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.titleBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titleBox1 {
+  margin: 2.5vh auto 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+  font-size: 18px;
+  font-family: 'Montserrat';
+}
+
+.titleBox2 {
+  margin: 1vh auto;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: 'Montserrat';
+}
+
+.otherLogoBox {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  margin: 0 30%;
+}
+
+.progress-bar {
+  border-radius: 50px;
+}
+
+div.progress {
+  border-radius: 50px;
+  background: rgba(20, 163, 139, 0.3);
+}
+
+.progressInfo {
+  font-family: 'Montserrat';
+  color: white;
+  font-size: 0.8rem;
+  margin: 0 1em;
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
+}
+
+.progressPercentage,
+.currentProgress {
+  margin: 4px 0 4px 0;
+}
+
+.currentProgress {
+  display: flex;
+  flex-direction: row;
+  font-size: 0.8rem;
+  justify-content: flex-end;
+}
+
+.launchpadInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.stackingInfoTitle {
+  color: #fff;
+}
+
+.h7 {
+  font-size: 0.8em;
+}
+
+.container {
+  max-width: 1080px;
+}
+
+.w80 {
+  width: 80px;
+}
+
+input[class='accordion'] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.row {
+  display: flex;
+}
+
+.row .col {
+  flex: 1;
+}
+
+.row .col:last-child {
+  margin-left: 1em;
+}
+
+/* Accordion styles */
+.tabs {
+  border-radius: 8px;
+  overflow: hidden;
+  /* box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5); */
+  width: 100%;
+}
+
+.tab {
+  width: 100%;
+  color: white;
+  overflow: hidden;
+}
+
+.tab-label {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  /* background: #2c3e50; */
+  font-weight: bold;
+  cursor: pointer;
+  /* Icon */
+}
+
+.tab-label:hover {
+  background: rgba(26, 37, 47, 0.3);
+}
+
+.tab-label::after {
+  content: '❯';
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  transition: all 0.35s;
+}
+
+.tab-content {
+  max-height: 0;
+  padding: 0 1em;
+  color: white;
+  background: transparent;
+  transition: all 0.35s;
+}
+
+.tab-close {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1em;
+  font-size: 0.75em;
+  background: #2c3e50;
+  cursor: pointer;
+}
+
+.tab-close:hover {
+  background: #1a252f;
+}
+
+input:checked + .tab-label {
+  background: linear-gradient(
+    96.51deg,
+    var(--primary-rgb) 2.96%,
+    var(--secondary-rgb) 55.12%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+input:checked + .tab-label::after {
+  transform: rotate(90deg);
+  background: linear-gradient(
+    96.51deg,
+    var(--primary-rgb) 2.96%,
+    var(--secondary-rgb) 55.12%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  height: 1.5rem;
+}
+
+input:checked ~ .tab-content {
+  max-height: 100vh;
+  padding: 1em;
+}

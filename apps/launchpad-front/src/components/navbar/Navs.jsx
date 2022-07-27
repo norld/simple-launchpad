@@ -2,11 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar, Container, Nav, Button } from 'react-bootstrap';
 import Web3Modal from 'web3modal';
-import dooit from "../../assets/Iconsdooit.svg"
-import { Link } from "react-router-dom";
+import dooit from 'assets/logo.png';
+import { Link } from 'react-router-dom';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 import Web3 from 'web3';
-// import { launchpad } from '../../common/abis/launchpad';
 
 const ChainId = 56;
 let provider;
@@ -125,7 +124,7 @@ function Navs() {
               onClick={connetWallet}
               style={{
                 background:
-                  'rgba(0, 0, 0, 0) linear-gradient(96.51deg, rgb(255, 113, 113) 2.96%, rgba(222, 28, 109, 0.78) 55.12%) repeat scroll 0% 0%',
+                  'rgba(0, 0, 0, 0) linear-gradient(96.51deg, var(--primary-rgb) 2.96%, var(--secondary-rgb) 55.12%) repeat scroll 0% 0%',
                 border: 'none',
                 boxShadow: 'none',
               }}
@@ -137,7 +136,7 @@ function Navs() {
               onClick={disconnectWallet}
               style={{
                 background:
-                  'rgba(0, 0, 0, 0) linear-gradient(96.51deg, rgb(255, 113, 113) 2.96%, rgba(222, 28, 109, 0.78) 55.12%) repeat scroll 0% 0%',
+                  'rgba(0, 0, 0, 0) linear-gradient(96.51deg, var(--primary-rgb) 2.96%, var(--secondary-rgb) 55.12%) repeat scroll 0% 0%',
                 border: 'none',
                 boxShadow: 'none',
               }}

@@ -24,26 +24,19 @@ importers:
 
   apps/launchpad-front:
     specifiers:
-      '@emotion/react': ^11.8.1
-      '@emotion/styled': ^11.8.1
-      '@ethersproject/bignumber': ^5.6.0
+      '@emotion/styled': ^11.9.3
       '@mui/lab': ^5.0.0-alpha.72
       '@mui/material': ^5.4.3
-      '@reduxjs/toolkit': ^1.8.0
-      '@remix-project/remixd': ^0.6.1
       '@testing-library/jest-dom': ^5.16.2
       '@testing-library/react': ^12.1.3
       '@testing-library/user-event': ^13.5.0
       '@types/node': ^17.0.21
       '@walletconnect/web3-provider': ^1.7.5
-      assert: ^2.0.0
       axios: ^0.26.1
       bootstrap: ^5.1.3
       dotenv: ^16.0.0
       ethers: ^5.6.1
       moment: ^2.29.1
-      next-redux-saga: ^4.1.2
-      next-redux-wrapper: ^7.0.5
       react: ^17.0.2
       react-bootstrap: ^2.2.0
       react-dom: ^17.0.2
@@ -52,36 +45,28 @@ importers:
       react-router: ^6.2.2
       react-router-dom: ^6.2.2
       react-scripts: ^4.0.3
-      redux: ^4.1.2
+      redux: ^4.2.0
       redux-saga: ^1.1.3
       redux-thunk: ^2.4.1
       sweetalert2: ^11.4.8
       web-vitals: ^2.1.4
       web3: ^1.7.1
-      web3-utils: ^1.7.1
       web3modal: ^1.9.5
       webpack: ^4.44.2
     dependencies:
-      '@emotion/react': 11.9.3_react@17.0.2
-      '@emotion/styled': 11.9.3_6gbh3mu672biaufra4tf4noafe
-      '@ethersproject/bignumber': 5.6.2
-      '@mui/lab': 5.0.0-alpha.91_brtf3bbj2u26jbqwiua4jsmp3a
-      '@mui/material': 5.9.1_bk6rmx7robimclftfia7dcxft4
-      '@reduxjs/toolkit': 1.8.3_bjryulbxll5jujtwpu5a2wm2cy
-      '@remix-project/remixd': 0.6.4
+      '@emotion/styled': 11.9.3_react@17.0.2
+      '@mui/lab': 5.0.0-alpha.91_ahtnbq66tb4sp2le53ttb67fdm
+      '@mui/material': 5.9.1_5sqa4osks5o7ytvzdcxctm4tsi
       '@testing-library/jest-dom': 5.16.4
       '@testing-library/react': 12.1.5_sfoxds7t5ydpegc3knd667wn6m
       '@testing-library/user-event': 13.5.0
       '@types/node': 17.0.45
       '@walletconnect/web3-provider': 1.7.8
-      assert: 2.0.0
       axios: 0.26.1
       bootstrap: 5.2.0
       dotenv: 16.0.1
       ethers: 5.6.9
       moment: 2.29.4
-      next-redux-saga: 4.1.2_redux-saga@1.1.3
-      next-redux-wrapper: 7.0.5_bjryulbxll5jujtwpu5a2wm2cy
       react: 17.0.2
       react-bootstrap: 2.4.0_sfoxds7t5ydpegc3knd667wn6m
       react-dom: 17.0.2_react@17.0.2
@@ -96,7 +81,6 @@ importers:
       sweetalert2: 11.4.23
       web-vitals: 2.1.4
       web3: 1.7.4
-      web3-utils: 1.7.4
       web3modal: 1.9.8
       webpack: 4.46.0
 
@@ -2817,28 +2801,6 @@ packages:
     resolution: {integrity: sha512-igX9a37DR2ZPGYtV6suZ6whr8pTFtyHL3K/oLUotxpSVO2ASaprmAe2Dkq7tBo7CRY7MMDrAa9nuQP9/YG8FxQ==}
     dev: false
 
-  /@emotion/react/11.9.3_react@17.0.2:
-    resolution: {integrity: sha512-g9Q1GcTOlzOEjqwuLF/Zd9LC+4FljjPjDfxSM7KmEakm+hsHXk+bYZ2q+/hTJzr0OUNkujo72pXLQvXj6H+GJQ==}
-    peerDependencies:
-      '@babel/core': ^7.0.0
-      '@types/react': '*'
-      react: '>=16.8.0'
-    peerDependenciesMeta:
-      '@babel/core':
-        optional: true
-      '@types/react':
-        optional: true
-    dependencies:
-      '@babel/runtime': 7.18.9
-      '@emotion/babel-plugin': 11.9.2
-      '@emotion/cache': 11.9.3
-      '@emotion/serialize': 1.0.4
-      '@emotion/utils': 1.1.0
-      '@emotion/weak-memoize': 0.2.5
-      hoist-non-react-statics: 3.3.2
-      react: 17.0.2
-    dev: false
-
   /@emotion/react/11.9.3_zifznmxqg6awlpuv2gb3k3voc4:
     resolution: {integrity: sha512-g9Q1GcTOlzOEjqwuLF/Zd9LC+4FljjPjDfxSM7KmEakm+hsHXk+bYZ2q+/hTJzr0OUNkujo72pXLQvXj6H+GJQ==}
     peerDependencies:
@@ -2876,7 +2838,7 @@ packages:
     resolution: {integrity: sha512-J3YPccVRMiTZxYAY0IOq3kd+hUP8idY8Kz6B/Cyo+JuXq52Ek+zbPbSQUrVQp95aJ+lsAW7DPL1P2Z+U1jGkKA==}
     dev: false
 
-  /@emotion/styled/11.9.3_6gbh3mu672biaufra4tf4noafe:
+  /@emotion/styled/11.9.3_react@17.0.2:
     resolution: {integrity: sha512-o3sBNwbtoVz9v7WB1/Y/AmXl69YHmei2mrVnK7JgyBJ//Rst5yqPZCecEJlMlJrFeWHp+ki/54uN265V2pEcXA==}
     peerDependencies:
       '@babel/core': ^7.0.0
@@ -2892,7 +2854,6 @@ packages:
       '@babel/runtime': 7.18.9
       '@emotion/babel-plugin': 11.9.2
       '@emotion/is-prop-valid': 1.1.3
-      '@emotion/react': 11.9.3_react@17.0.2
       '@emotion/serialize': 1.0.4
       '@emotion/utils': 1.1.0
       react: 17.0.2
@@ -3728,7 +3689,7 @@ packages:
       react-is: 18.2.0
     dev: false
 
-  /@mui/lab/5.0.0-alpha.91_brtf3bbj2u26jbqwiua4jsmp3a:
+  /@mui/lab/5.0.0-alpha.91_ahtnbq66tb4sp2le53ttb67fdm:
     resolution: {integrity: sha512-46qnSPlK39hz5rtMjxHIkCeRzU+7/I27AyEI5mxtCCr2q4r4nC6IV2+2BhyM/FU09+v9tV5rByLZTkEmjy3dQQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -3747,11 +3708,10 @@ packages:
         optional: true
     dependencies:
       '@babel/runtime': 7.18.9
-      '@emotion/react': 11.9.3_react@17.0.2
-      '@emotion/styled': 11.9.3_6gbh3mu672biaufra4tf4noafe
+      '@emotion/styled': 11.9.3_react@17.0.2
       '@mui/base': 5.0.0-alpha.90_sfoxds7t5ydpegc3knd667wn6m
-      '@mui/material': 5.9.1_bk6rmx7robimclftfia7dcxft4
-      '@mui/system': 5.9.1_z5dax4wbbvawomfdisf4dzswiq
+      '@mui/material': 5.9.1_5sqa4osks5o7ytvzdcxctm4tsi
+      '@mui/system': 5.9.1_7ncivkbvxnmq4fh3wegesuhv6q
       '@mui/utils': 5.9.1_react@17.0.2
       clsx: 1.2.1
       prop-types: 15.8.1
@@ -3760,7 +3720,7 @@ packages:
       react-is: 18.2.0
     dev: false
 
-  /@mui/material/5.9.1_bk6rmx7robimclftfia7dcxft4:
+  /@mui/material/5.9.1_5sqa4osks5o7ytvzdcxctm4tsi:
     resolution: {integrity: sha512-c09SbaMm7Rl7Df9JRkXwPWNbnfrutmHERTJC46OJ9OMAM9+HGQihIbGln1k2Xj65jb3E+G498FZFAoSrrBDvwQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -3778,10 +3738,9 @@ packages:
         optional: true
     dependencies:
       '@babel/runtime': 7.18.9
-      '@emotion/react': 11.9.3_react@17.0.2
-      '@emotion/styled': 11.9.3_6gbh3mu672biaufra4tf4noafe
+      '@emotion/styled': 11.9.3_react@17.0.2
       '@mui/base': 5.0.0-alpha.90_sfoxds7t5ydpegc3knd667wn6m
-      '@mui/system': 5.9.1_z5dax4wbbvawomfdisf4dzswiq
+      '@mui/system': 5.9.1_7ncivkbvxnmq4fh3wegesuhv6q
       '@mui/types': 7.1.4
       '@mui/utils': 5.9.1_react@17.0.2
       '@types/react-transition-group': 4.4.5
@@ -3810,7 +3769,7 @@ packages:
       react: 17.0.2
     dev: false
 
-  /@mui/styled-engine/5.8.7_z5dax4wbbvawomfdisf4dzswiq:
+  /@mui/styled-engine/5.8.7_7ncivkbvxnmq4fh3wegesuhv6q:
     resolution: {integrity: sha512-tVqtowjbYmiRq+qcqXK731L9eWoL9H8xTRhuTgaDGKdch1zlt4I2UwInUe1w2N9N/u3/jHsFbLcl1Un3uOwpQg==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -3825,14 +3784,13 @@ packages:
     dependencies:
       '@babel/runtime': 7.18.9
       '@emotion/cache': 11.9.3
-      '@emotion/react': 11.9.3_react@17.0.2
-      '@emotion/styled': 11.9.3_6gbh3mu672biaufra4tf4noafe
+      '@emotion/styled': 11.9.3_react@17.0.2
       csstype: 3.1.0
       prop-types: 15.8.1
       react: 17.0.2
     dev: false
 
-  /@mui/system/5.9.1_z5dax4wbbvawomfdisf4dzswiq:
+  /@mui/system/5.9.1_7ncivkbvxnmq4fh3wegesuhv6q:
     resolution: {integrity: sha512-ZixTmc2+sYp++avoYJ38eM70nfwwudN06vYCU4kfwa4nQPiH+bhLYZnfYkcXRKiDR/hfT0dptbOOfQGZqBYczQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -3849,10 +3807,9 @@ packages:
         optional: true
     dependencies:
       '@babel/runtime': 7.18.9
-      '@emotion/react': 11.9.3_react@17.0.2
-      '@emotion/styled': 11.9.3_6gbh3mu672biaufra4tf4noafe
+      '@emotion/styled': 11.9.3_react@17.0.2
       '@mui/private-theming': 5.9.1_react@17.0.2
-      '@mui/styled-engine': 5.8.7_z5dax4wbbvawomfdisf4dzswiq
+      '@mui/styled-engine': 5.8.7_7ncivkbvxnmq4fh3wegesuhv6q
       '@mui/types': 7.1.4
       '@mui/utils': 5.9.1_react@17.0.2
       clsx: 1.2.1
@@ -4113,80 +4070,6 @@ packages:
 
   /@redux-saga/types/1.1.0:
     resolution: {integrity: sha512-afmTuJrylUU/0OtqzaRkbyYFFNgCF73Bvel/sw90pvGrWIZ+vyoIJqA6eMSoA6+nb443kTmulmBtC9NerXboNg==}
-    dev: false
-
-  /@reduxjs/toolkit/1.8.3_bjryulbxll5jujtwpu5a2wm2cy:
-    resolution: {integrity: sha512-lU/LDIfORmjBbyDLaqFN2JB9YmAT1BElET9y0ZszwhSBa5Ef3t6o5CrHupw5J1iOXwd+o92QfQZ8OJpwXvsssg==}
-    peerDependencies:
-      react: ^16.9.0 || ^17.0.0 || ^18
-      react-redux: ^7.2.1 || ^8.0.2
-    peerDependenciesMeta:
-      react:
-        optional: true
-      react-redux:
-        optional: true
-    dependencies:
-      immer: 9.0.15
-      react: 17.0.2
-      react-redux: 7.2.8_sfoxds7t5ydpegc3knd667wn6m
-      redux: 4.2.0
-      redux-thunk: 2.4.1_redux@4.2.0
-      reselect: 4.1.6
-    dev: false
-
-  /@remix-project/remixd/0.6.4:
-    resolution: {integrity: sha512-IFFGUATqzBsVsyGs1ftF8WeFKLZ06vhiK9b3vhnIoduNt0k6lXdx1ty9sPORwcT1WD5Kgw4TeO0bwAR72udd5Q==}
-    hasBin: true
-    requiresBuild: true
-    dependencies:
-      '@remixproject/plugin': 0.3.31
-      '@remixproject/plugin-api': 0.3.31
-      '@remixproject/plugin-utils': 0.3.31
-      '@remixproject/plugin-ws': 0.3.31_ws@7.5.9
-      axios: 0.26.1
-      chokidar: 2.1.8
-      commander: 2.20.3
-      fs-extra: 3.0.1
-      isbinaryfile: 3.0.3
-      latest-version: 5.1.0
-      semver: 6.3.0
-      ws: 7.5.9
-    transitivePeerDependencies:
-      - bufferutil
-      - debug
-      - supports-color
-      - utf-8-validate
-    dev: false
-
-  /@remixproject/plugin-api/0.3.31:
-    resolution: {integrity: sha512-LOJRHxORNp7zW8k7//DQz5aZ7eqB7TwhYXrvzqvaryDTvtvJGWrlTHg81hzALynaxZKEWneohxjUxKvGp/eA4g==}
-    dependencies:
-      '@remixproject/plugin-utils': 0.3.31
-    dev: false
-
-  /@remixproject/plugin-utils/0.3.31:
-    resolution: {integrity: sha512-OOAjoSd+ErBMrcNQEh80NU3BjJ9fHXuftRfy5Ul9aGXN3b1LJSNVvfrG+FxX6lpyaAK5JBj+aB9pgFozgb2wlw==}
-    dependencies:
-      tslib: 2.0.1
-    dev: false
-
-  /@remixproject/plugin-ws/0.3.31_ws@7.5.9:
-    resolution: {integrity: sha512-Z4G6vkGxxCP+ibGNHAvNaFjYE4hbsazOEL50pMnda6LZNci9akMSiI/1MIZscVSMU8l2sYOoNUsWvLfLkIkYKQ==}
-    peerDependencies:
-      ws: ^7.3.1
-    dependencies:
-      '@remixproject/plugin': 0.3.31
-      '@remixproject/plugin-api': 0.3.31
-      '@remixproject/plugin-utils': 0.3.31
-      ws: 7.5.9
-    dev: false
-
-  /@remixproject/plugin/0.3.31:
-    resolution: {integrity: sha512-9ntMU9CzStloahm/wXt4V8n64ERgJzY5nG0bzQfjnI12knrdTmUo+LC42M2xaTBDDP9CzMPdqClg7XhhRLzohA==}
-    dependencies:
-      '@remixproject/plugin-api': 0.3.31
-      '@remixproject/plugin-utils': 0.3.31
-      events: 3.2.0
     dev: false
 
   /@restart/hooks/0.4.7_react@17.0.2:
@@ -6829,7 +6712,7 @@ packages:
   /axios/0.24.0_debug@4.3.2:
     resolution: {integrity: sha512-Q6cWsys88HoPgAaFAVUb0WpPk0O8iTeisR9IMqy9G8AbO4NlpVknrnQS03zzF9PGAWgO3cgletO3VjV/P7VztA==}
     dependencies:
-      follow-redirects: 1.15.1_debug@4.3.4
+      follow-redirects: 1.15.1
     transitivePeerDependencies:
       - debug
     dev: false
@@ -6837,7 +6720,7 @@ packages:
   /axios/0.25.0:
     resolution: {integrity: sha512-cD8FOb0tRH3uuEe6+evtAbgJtfxr7ly3fQjYcMcuPlgkwVS9xboaVIpcDV+cYQe+yGykgwZCs1pzjntcGa6l5g==}
     dependencies:
-      follow-redirects: 1.15.1_debug@4.3.4
+      follow-redirects: 1.15.1
     transitivePeerDependencies:
       - debug
     dev: false
@@ -6853,7 +6736,7 @@ packages:
   /axios/0.26.1:
     resolution: {integrity: sha512-fPwcX4EvnSHuInCMItEhAGnaSEXRBjtzh9fOtsE6E1G6p7vl7edEeZe11QHf18+6+9gR5PbKV/sGKNaD8YaMeA==}
     dependencies:
-      follow-redirects: 1.15.1
+      follow-redirects: 1.15.1_debug@4.3.4
     transitivePeerDependencies:
       - debug
     dev: false
@@ -8050,6 +7933,7 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: false
+    optional: true
 
   /chokidar/2.1.8_supports-color@6.1.0:
     resolution: {integrity: sha512-ZmZUazfOzf0Nve7duiCKD23PFSCs4JPoYyccjUFF3aQkQadqBhfzhjkwBH2mNOG9cTBwhamM37EIsIkZw3nRgg==}
@@ -11020,11 +10904,6 @@ packages:
     resolution: {integrity: sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==}
     dev: false
 
-  /events/3.2.0:
-    resolution: {integrity: sha512-/46HWwbfCX2xTawVfkKLGxMifJYQBWMwY1mjywRtb4c9x8l5NP3KoJtnIOiL1hfdRkIuYhETxQlo62IF8tcnlg==}
-    engines: {node: '>=0.8.x'}
-    dev: false
-
   /events/3.3.0:
     resolution: {integrity: sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==}
     engines: {node: '>=0.8.x'}
@@ -11719,14 +11598,6 @@ packages:
       graceful-fs: 4.2.10
       jsonfile: 6.1.0
       universalify: 2.0.0
-    dev: false
-
-  /fs-extra/3.0.1:
-    resolution: {integrity: sha512-V3Z3WZWVUYd8hoCL5xfXJCaHWYzmtwW5XWYSlLgERi8PWd8bx1kUHUk8L1BT57e49oKnDDD180mjfrHc1yA9rg==}
-    dependencies:
-      graceful-fs: 4.2.10
-      jsonfile: 3.0.1
-      universalify: 0.1.2
     dev: false
 
   /fs-extra/4.0.3:
@@ -12603,7 +12474,7 @@ packages:
     engines: {node: '>=8.0.0'}
     dependencies:
       eventemitter3: 4.0.7
-      follow-redirects: 1.15.1_debug@4.3.2
+      follow-redirects: 1.15.1
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
@@ -12731,10 +12602,6 @@ packages:
 
   /immer/8.0.1:
     resolution: {integrity: sha512-aqXhGP7//Gui2+UrEtvxZxSquQVXTpZ7KDxfCcKAF3Vysvw0CViVaW9RZ1j1xlIYqaaaipBoqdqeibkc18PNvA==}
-    dev: false
-
-  /immer/9.0.15:
-    resolution: {integrity: sha512-2eB/sswms9AEUSkOm4SbV5Y7Vmt/bKRwByd52jfLkW4OLYeaTP3EEiJ9agqU0O/tq6Dk62Zfj+TJSqfm1rLVGQ==}
     dev: false
 
   /immer/9.0.6:
@@ -13421,13 +13288,6 @@ packages:
 
   /isarray/2.0.5:
     resolution: {integrity: sha512-xHjhDr3cNBK0BzdUJSPXZntQUx/mwMS5Rw4A7lPJ90XGAO6ISP/ePDNuo0vhqOZU+UD5JoodwCAAoZQd3FeAKw==}
-    dev: false
-
-  /isbinaryfile/3.0.3:
-    resolution: {integrity: sha512-8cJBL5tTd2OS0dM4jz07wQd5g0dCCqIhUxPIGtZfa5L6hWlvV5MHTITy/DBAsF+Oe2LS1X3krBUhNwaGUWpWxw==}
-    engines: {node: '>=0.6.0'}
-    dependencies:
-      buffer-alloc: 1.2.0
     dev: false
 
   /isbinaryfile/4.0.10:
@@ -14226,12 +14086,6 @@ packages:
     hasBin: true
     dev: false
 
-  /jsonfile/3.0.1:
-    resolution: {integrity: sha512-oBko6ZHlubVB5mRFkur5vgYR1UyqX+S6Y/oCfLhqNdcc2fYFlDpIoNc7AfKS1KOGcnNAkvsr0grLck9ANM815w==}
-    optionalDependencies:
-      graceful-fs: 4.2.10
-    dev: false
-
   /jsonfile/4.0.0:
     resolution: {integrity: sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==}
     optionalDependencies:
@@ -14620,13 +14474,6 @@ packages:
     dependencies:
       lodash: 4.17.21
       webpack-sources: 1.4.3
-    dev: false
-
-  /latest-version/5.1.0:
-    resolution: {integrity: sha512-weT+r0kTkRQdCdYCNtkMwWXQTMEswKrFBkm4ckQOMVhhqhIMI1UT2hMj+1iigIhgSZm5gTmrRXBNoGUgaTY1xA==}
-    engines: {node: '>=8'}
-    dependencies:
-      package-json: 6.5.0
     dev: false
 
   /level-codec/7.0.1:
@@ -15763,25 +15610,6 @@ packages:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
     dev: false
 
-  /next-redux-saga/4.1.2_redux-saga@1.1.3:
-    resolution: {integrity: sha512-UEI/8bRObquIpHeHX1RuqOFBe2zhI2gTHLijBLiinOZrCbir18B4/lJpymrEoHHpel0iiZEwV4R6jeUWYv+Avw==}
-    peerDependencies:
-      redux-saga: 1.x
-    dependencies:
-      redux-saga: 1.1.3
-    dev: false
-
-  /next-redux-wrapper/7.0.5_bjryulbxll5jujtwpu5a2wm2cy:
-    resolution: {integrity: sha512-UFXdAWG5i+GFT8+Hoqpx3GArkPh34fVWF9YoA2VSHlBzsrPtnRd7NWM6FNSYUennpommTpWJ09mu+r/1UxyIkg==}
-    peerDependencies:
-      next: '>=10.0.3'
-      react: '*'
-      react-redux: '*'
-    dependencies:
-      react: 17.0.2
-      react-redux: 7.2.8_sfoxds7t5ydpegc3knd667wn6m
-    dev: false
-
   /next-tick/1.1.0:
     resolution: {integrity: sha512-CXdUiJembsNjuToQvxayPZF9Vqht7hewsvy2sOWafLvi2awflj9mOC6bHIg50orX8IJvWKY9wYQ/zB2kogPslQ==}
     dev: false
@@ -16471,16 +16299,6 @@ packages:
   /p-try/2.2.0:
     resolution: {integrity: sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==}
     engines: {node: '>=6'}
-    dev: false
-
-  /package-json/6.5.0:
-    resolution: {integrity: sha512-k3bdm2n25tkyxcjSKzB5x8kfVxlMdgsbPr0GkZcwHsLpba6cBjqCt1KlcChKEvxHIcTB1FVMuwoijZ26xex5MQ==}
-    engines: {node: '>=8'}
-    dependencies:
-      got: 9.6.0
-      registry-auth-token: 4.2.2
-      registry-url: 5.1.0
-      semver: 6.3.0
     dev: false
 
   /package-json/7.0.0:
@@ -18527,6 +18345,7 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: false
+    optional: true
 
   /readdirp/2.2.1_supports-color@6.1.0:
     resolution: {integrity: sha512-1JU/8q+VgFZyxwrJ+SVIOsh+KywWGpds3NTqikiKpDMZWScmAYyKIgqkO+ARvNWJfXeXR1zxz7aHF4u4CyH6vQ==}
@@ -20806,10 +20625,6 @@ packages:
 
   /tslib/1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
-    dev: false
-
-  /tslib/2.0.1:
-    resolution: {integrity: sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==}
     dev: false
 
   /tslib/2.4.0:
