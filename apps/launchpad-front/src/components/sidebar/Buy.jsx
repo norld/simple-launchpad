@@ -4,6 +4,7 @@ import { launchpad as launchpadABI } from 'common/abis/launchpad';
 import { toCacatUnit } from 'utils/helper/web3helper';
 import { abi } from 'common/abis/abi';
 import { ethers } from 'ethers';
+import { useWeb3 } from '../../common/hooks/useWeb3';
 
 function Buy(props) {
   const { launchpad, gblog } = props;
@@ -13,6 +14,7 @@ function Buy(props) {
   const [balance, setBalance] = useState('0');
   const [tokenName, setTokenName] = useState('');
   const [decimal, setDecimal] = useState(0);
+  const { isConnected } = useWeb3();
   const usdc = {
     // address: '0xbc215584c86151b2e24f5fAb8116923d9f292a11',
     address: launchpad.PoolAddress,
@@ -158,14 +160,24 @@ function Buy(props) {
         </>
       ) : (
         <>
-          <p>Click approve to unlock the contribute button</p>
-          <Button
-            className="inputField mt-2 bg-gradient-color btn-sm text-white rounded px-4 py-2"
-            id="button-addon2"
-            onClick={() => approve()}
-          >
-            Approve
-          </Button>
+          {isConnected ? (
+            <>
+              <p>Click approve to unlock the contribute button</p>
+              <Button
+                className="inputField mt-2 bg-gradient-color btn-sm text-white rounded px-4 py-2"
+                id="button-addon2"
+                onClick={() => approve()}
+              >
+                Approve
+              </Button>
+            </>
+          ) : (
+            <>
+              <p className="mb-0">
+                You must connect first, click connect button on navbar
+              </p>
+            </>
+          )}
         </>
       )}
     </div>

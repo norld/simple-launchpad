@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from "react";
-import claimLogo from "../../assets/card-receive.svg";
-import { launchpad as launchpadABI } from "../../common/abis/launchpad";
+import React, { useState, useEffect } from 'react';
+import claimLogo from '../../assets/card-receive.svg';
+import { launchpad as launchpadABI } from '../../common/abis/launchpad';
 
 function ClaimButton(props) {
   const [isClaimOpen, setIsClaimOpen] = useState(false);
   const [claimAmount, setClaimAmount] = useState(0);
   const { item } = props;
-  const usdc = { address: item.PoolAddress, abi: launchpadABI};
+  const usdc = { address: item.PoolAddress, abi: launchpadABI };
   const lpadContract = new window.$web3.eth.Contract(usdc.address, usdc.abi);
   const init = async () => {
     const getClaimOpen = await lpadContract.methods.getClaimOpen().call();
-    const claimableAmount = await lpadContract.methods.earned({ address: window.$account[0] }).call();
+    const claimableAmount = await lpadContract.methods
+      .earned({ address: window.$account[0] })
+      .call();
     setIsClaimOpen(getClaimOpen);
     setClaimAmount(claimableAmount);
   };
@@ -21,7 +23,9 @@ function ClaimButton(props) {
   }, []);
 
   const claimRewards = async () => {
-    const claimRewards = await lpadContract.methods.claimRewards().send({from: window.$account[0]});
+    const claimRewards = await lpadContract.methods
+      .claimRewards()
+      .send({ from: window.$account[0] });
     if (claimRewards) console.log('@claimRewards', claimRewards);
   };
   return (

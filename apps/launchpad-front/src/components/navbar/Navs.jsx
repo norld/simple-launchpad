@@ -6,101 +6,20 @@ import dooit from 'assets/logo.png';
 import { Link } from 'react-router-dom';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 import Web3 from 'web3';
+import { useWeb3 } from '../../common/hooks/useWeb3';
 
-const ChainId = 56;
-let provider;
-const providerOptions = {
-  injected: {
-    package: null,
-  },
-  walletconnect: {
-    package: WalletConnectProvider,
-    options: {
-      rpc: {
-        56: 'https://rpc-bsc-main-01.3tokendigital.com/rpc',
-        // eslint-disable-next-line no-dupe-keys
-        56: 'https://bsc-dataseed1.ninicoin.io',
-        56: 'https://bsc-dataseed1.defibit.io',
-        // 97: "https://data-seed-prebsc-1-s1.binance.org:8545/",
-        // 97: "https://data-seed-prebsc-2-s2.binance.org:8545/",
-        // 97: "https://data-seed-prebsc-1-s3.binance.org:8545/",
-        // 97: "https://data-seed-prebsc-2-s3.binance.org:8545/",
-      },
-      chainId: 56,
-      network: 'binance',
-      bridge: 'https://bridge.walletconnect.org',
-      qrcodeModalOptions: {
-        mobileLinks: ['trust', 'metamusk', 'neftipedia'],
-      },
-    },
-  },
-};
-
-function Navs() {
-  const [isConnected, setIsConnected] = useState(false);
-  const [isDisconnected, setIsDisconnected] = useState(true);
-
-  let web3Modal;
-  if (typeof window !== 'undefined') {
-    web3Modal = new Web3Modal({
-      network: 'mainnet',
-      cacheProvider: true,
-      providerOptions,
-    });
-  }
-
-  const init = async () => {
-    if (web3Modal.cachedProvider) connetWallet();
-  };
-
-  useEffect(() => {
-    init();
-    // console.log('init jalan lo');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const disconnectWallet = async () => {
-    await web3Modal.clearCachedProvider();
-    window.$provider = null;
-    window.$web3 = null;
-    window.$account = null;
-    setIsDisconnected(true);
-    setIsConnected(false);
-  };
-
-  const connetWallet = async () => {
-    try {
-      provider = await web3Modal.connect();
-      window.$provider = provider;
-      window.$web3 = new Web3(provider);
-      window.$account = await window.$web3.eth.getAccounts();
-      setIsDisconnected(false);
-      setIsConnected(true);
-      // window.location.reload(false);
-    } catch (e) {
-      throw e;
-    }
-
-    if (window.$provider) {
-      window.$provider.on('accountsChanged', (accounts) => {
-        console.log(accounts);
-        window.$account = accounts;
-      });
-      window.$provider.on('chainChanged', (chainId) => {
-        if (chainId !== ChainId) {
-          console.log('wrong network');
-        }
-      });
-      window.$provider.on('connect', (info) => {
-        console.log('@connected', info);
-      });
-      window.$provider.on('disconnect', (error) => {
-        console.log('disconnect', error);
-        disconnectWallet();
-      });
-    }
-  };
-
+function Navs({ web3Func }) {
+  const {
+    connetWallet,
+    disconnectWallet,
+    isConnected,
+    isDisconnected,
+    web3Modal,
+    refConnect,
+    refDisconnect,
+  } = web3Func;
+  console.log('nav isConnected', isConnected);
+  console.log('nav isDisconnected', isDisconnected);
   return (
     <Navbar
       className="py-4"
@@ -122,6 +41,7 @@ function Navs() {
           <Nav>
             <Button
               onClick={connetWallet}
+              ref={refConnect}
               style={{
                 background:
                   'rgba(0, 0, 0, 0) linear-gradient(96.51deg, var(--primary-rgb) 2.96%, var(--secondary-rgb) 55.12%) repeat scroll 0% 0%',
@@ -134,6 +54,7 @@ function Navs() {
             </Button>
             <Button
               onClick={disconnectWallet}
+              ref={refDisconnect}
               style={{
                 background:
                   'rgba(0, 0, 0, 0) linear-gradient(96.51deg, var(--primary-rgb) 2.96%, var(--secondary-rgb) 55.12%) repeat scroll 0% 0%',

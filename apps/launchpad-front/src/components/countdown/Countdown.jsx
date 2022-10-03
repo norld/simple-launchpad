@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import "./countdown.css";
+import React, { useEffect, useState } from 'react';
+import './countdown.css';
 // import ProgressBarMenu from "../progressBarMenu/progressBarMenu";
-import moment from "moment";
+import moment from 'moment';
 
 function Countdown(props) {
   const { item } = props;
@@ -67,21 +67,31 @@ function Countdown(props) {
   });
 
   return (
-    <div className={`${item.attributes.StatusType[1] === "Ended" ? "countdownBoxEnded" : "countdownBox"} py-3 rounded`}>
-      {
-        item.attributes.StatusType[1] === "Ended" ?
-        <p className="presaleTitle">Presale Has Ended</p> : 
+    <div
+      className={`${
+        item.attributes.StatusType[1] === 'Ended'
+          ? 'countdownBoxEnded'
+          : 'countdownBox'
+      } py-3 rounded`}
+    >
+      {item.attributes.StatusType[1] === 'Ended' ? (
+        <p className="presaleTitle">Presale Has Ended</p>
+      ) : (
         <></>
-      }
-      {item.attributes.StatusType[1] !== "Ended" ? (
+      )}
+      {item.attributes.StatusType[1] !== 'Ended' ? (
         <>
-        <p className="presaleTitle">Presale {item.attributes.StatusType[1] === "ComingSoon" ? "Starts" : "Ends"} in</p>
+          <p className="presaleTitle">
+            Presale{' '}
+            {item.attributes.StatusType[1] === 'ComingSoon' ? 'Starts' : 'Ends'}{' '}
+            in
+          </p>
           <div className="daysAndTime">
             <div className="HMS">
               <div className="time">
                 <p className="number">
                   {timeLeft.days.toString().length < 2
-                    ? "0" + timeLeft.days
+                    ? '0' + timeLeft.days
                     : timeLeft.days}
                 </p>
               </div>
@@ -89,7 +99,7 @@ function Countdown(props) {
               <div className="time">
                 <p className="number">
                   {timeLeft.hours.toString().length < 2
-                    ? "0" + timeLeft.hours
+                    ? '0' + timeLeft.hours
                     : timeLeft.hours}
                 </p>
               </div>
@@ -97,7 +107,7 @@ function Countdown(props) {
               <div className="time">
                 <p className="number">
                   {timeLeft.minutes.toString().length < 2
-                    ? "0" + timeLeft.minutes
+                    ? '0' + timeLeft.minutes
                     : timeLeft.minutes}
                 </p>
               </div>
@@ -105,7 +115,7 @@ function Countdown(props) {
               <div className="time">
                 <p className="number">
                   {timeLeft.seconds.toString().length < 2
-                    ? "0" + timeLeft.seconds
+                    ? '0' + timeLeft.seconds
                     : timeLeft.seconds}
                 </p>
               </div>

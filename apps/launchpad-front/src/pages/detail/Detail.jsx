@@ -1,8 +1,5 @@
 /* eslint-disable no-undef */
-import React, {
-  useEffect,
-  // useState
-} from 'react';
+import React, { useEffect, useState } from 'react';
 import './detail.css';
 import hourglass from 'assets/Iconshourglass.svg';
 import radar from 'assets/Iconsradar.svg';
@@ -23,17 +20,31 @@ import ClaimButton from 'components/claim/Claim';
 import api from 'utils/network/baseUrl.utils';
 import moment from 'moment';
 import ProgressBarMenu from 'components/progressBarMenu/progressBarMenu';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getTheProject } from './storage/detailActions';
 import { launchpad as launchpadABI } from 'common/abis/launchpad';
 import Footer from 'components/footer/Footer';
+import { useWeb3 } from '../../common/hooks/useWeb3';
 
-function Detail(props) {
-  const [counter] = React.useState(60);
-  const [limit, setLimit] = React.useState(false);
-  const [receive, setReceive] = React.useState(0);
+function Detail({ web3Func, props }) {
+  const {
+    connetWallet,
+    disconnectWallet,
+    isConnected,
+    isDisconnected,
+    web3Modal,
+    refConnect,
+    refDisconnect,
+  } = web3Func;
+
+  console.log('detail isConnected', isConnected);
+  console.log('detail isDisconnected', isDisconnected);
+  const [counter] = useState(60);
+  const [newStatus, setNewStatus] = useState('ComingSoon');
+  const [limit, setLimit] = useState(false);
+  const [receive, setReceive] = useState(0);
   const { id } = useParams();
   const dispatch = useDispatch();
 
@@ -56,16 +67,37 @@ function Detail(props) {
       const _record = await tokenLaunchpadContract.methods
         .getBuyRecord(window.$account[0])
         .call();
+      console.log('1', window.$account);
       if (_record) {
-        if (_record[0] >= theProject[0].data.attributes.MaxTimes)
+        if (_record[0] >= theProject[0].data.attributes.MaxTimes) {
           setLimit(false);
+        }
         setReceive(_record[2].toString());
       }
     }
   };
 
   useEffect(() => {
-    if (theProject[0]) init(theProject[0].data.attributes);
+    if (theProject[0]) {
+      init(theProject[0].data.attributes);
+      const newDateNow = Math.floor(new Date().getTime() / 1000);
+      const newStartDate = Math.floor(
+        new Date(theProject[0].data.attributes.LaunchDate).getTime() / 1000
+      );
+      const newEndDate = Math.floor(
+        new Date(theProject[0].data.attributes.EndDate).getTime() / 1000
+      );
+      if (newDateNow < newStartDate) {
+        console.log('preparation');
+        setNewStatus('ComingSoon');
+      } else if (newDateNow > newStartDate && newDateNow < newEndDate) {
+        console.log('on sale');
+        setNewStatus('OnSale');
+      } else if (newDateNow > newEndDate) {
+        console.log('ended');
+        setNewStatus('Ended');
+      }
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [theProject]);
 
@@ -106,7 +138,6 @@ function Detail(props) {
       scan: 'bscscan.com',
     },
   };
-
   return (
     <>
       {theProject.length ? (
@@ -115,13 +146,11 @@ function Detail(props) {
             <Row className="flex-lg-row-reverse mb-5">
               <Col lg={4}>
                 <Box className="my-3">
-                  {theProject[0].data.attributes.StatusType[1] ===
-                  'ComingSoon' ? (
+                  {newStatus === 'ComingSoon' ? (
                     <>
                       <Countdown item={theProject[0].data} />
                     </>
-                  ) : theProject[0].data.attributes.StatusType[1] ===
-                    'OnSale' ? (
+                  ) : newStatus === 'OnSale' ? (
                     <>
                       <Countdown item={theProject[0].data} />
                       <ProgressBarMenu item={theProject[0].data} />
@@ -131,12 +160,19 @@ function Detail(props) {
                         gblog={limit}
                       />
                     </>
-                  ) : theProject[0].data.attributes.StatusType[1] ===
-                    'Ended' ? (
+                  ) : newStatus === 'Ended' ? (
                     <>
                       <Countdown item={theProject[0].data} />
-                      <ProgressBarMenu item={theProject[0].data} />
-                      <ClaimButton item={theProject[0].data.attributes} />
+                      {isConnected ? (
+                        <div>
+                          <ProgressBarMenu item={theProject[0].data} />
+
+                          <div className="btn btn-primary">
+                            Kontil
+                            {/* <ClaimButton item={theProject[0].data.attributes} /> */}
+                          </div>
+                        </div>
+                      ) : null}
                     </>
                   ) : (
                     <></>
@@ -146,10 +182,7 @@ function Detail(props) {
                     <div className="boxDetail">
                       <p className="boxDetailTitle">Status</p>
                       <p className="boxDetailContent">
-                        {
-                          statusObj[theProject[0].data.attributes.StatusType[1]]
-                            .text
-                        }
+                        {statusObj[newStatus].text}
                       </p>
                     </div>
                     <hr className="hr" />
@@ -194,21 +227,15 @@ function Detail(props) {
               <Col lg={8}>
                 <Box>
                   <Box
-                    className={`status${theProject[0].data.attributes.StatusType[1]} my-3 d-flex align-items-center p-3 rounded`}
+                    className={`status${newStatus} my-3 d-flex align-items-center p-3 rounded`}
                   >
                     <img
                       className="pe-1"
-                      src={
-                        statusObj[theProject[0].data.attributes.StatusType[1]]
-                          .img
-                      }
+                      src={statusObj[newStatus].img}
                       alt="status img"
                     />
                     <p className="text-white my-0">
-                      {
-                        statusObj[theProject[0].data.attributes.StatusType[1]]
-                          .text
-                      }
+                      {statusObj[newStatus].text}
                     </p>
                   </Box>
                   <Box className="details p-4 rounded">
@@ -370,9 +397,7 @@ function Detail(props) {
                         <p className="boxDetailTitle">Swap Rate</p>
                         <p className="boxDetailContent">
                           {`1 ${theProject[0].data.attributes.Currency} = ${
-                            theProject[0].data.attributes.token.data.attributes
-                              .TokenForPresale /
-                            theProject[0].data.attributes.Hardcap
+                            1 / theProject[0].data.attributes.PriceLaunch
                           } ${theProject[1].data.attributes.TokenSymbol}`}{' '}
                         </p>
                       </div>
