@@ -10,7 +10,7 @@ import AddForm from 'pages/addForm/AddForm';
 import Detail from 'pages/detail/Detail';
 import Home from 'pages/home/Home';
 
-export default function AppRoutes(props) {
+export default function AppRoutes({ web3Func, props }) {
   return (
     <Routes>
       {/* add your route here!! */}
@@ -23,7 +23,7 @@ export default function AppRoutes(props) {
       <Route
         exact
         path={DETAIL_PATH}
-        element={<Detail props={props} />}
+        element={<Detail web3Func={web3Func} props={props} />}
       ></Route>
       <Route path={'/*'} element={<Page404 />}></Route>
     </Routes>

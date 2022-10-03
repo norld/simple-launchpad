@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import api from 'utils/network/baseUrl.utils';
-import ProgressBarMenu from 'components/progressBarMenu/progressBarMenu';
+// import ProgressBarMenu from 'components/progressBarMenu/progressBarMenu';
 import Description from 'components/description/Description';
 import Footer from 'components/footer/Footer';
 import FAQ from 'components/faq/faq';
@@ -192,6 +192,21 @@ function Home(props) {
           {projects.length ? (
             projects[0].data.map((item, idx) => {
               const itemAttr = item.attributes;
+              const newDateNow = Math.floor(new Date().getTime() / 1000);
+              const newStartDate = Math.floor(
+                new Date(itemAttr.LaunchDate).getTime() / 1000
+              );
+              const newEndDate = Math.floor(
+                new Date(itemAttr.EndDate).getTime() / 1000
+              );
+              let newStatus;
+              if (newDateNow < newStartDate) {
+                newStatus = 'ComingSoon';
+              } else if (newDateNow > newStartDate && newDateNow < newEndDate) {
+                newStatus = 'OnSale';
+              } else if (newDateNow > newEndDate) {
+                newStatus = 'Ended';
+              }
               const pool = projects[1].data.filter((token) => {
                 return token.id === itemAttr.token.data.id;
               })[0];
@@ -209,14 +224,11 @@ function Home(props) {
                     >
                       <div className="statuses">
                         <div
-                          className={`status${itemAttr.StatusType[1]} d-flex align-items-center`}
+                          className={`status${newStatus} d-flex align-items-center`}
                         >
-                          <img
-                            src={statusObj[itemAttr.StatusType[1]].img}
-                            alt=""
-                          />
+                          <img src={statusObj[newStatus].img} alt="" />
                           <p className="statusText">
-                            {statusObj[itemAttr.StatusType[1]].text}
+                            {statusObj[newStatus].text}
                           </p>
                         </div>
                         <div className="status2">
@@ -305,7 +317,7 @@ function Home(props) {
                         <div className="boxDetail">
                           <p className="stackingInfoTitle">Starts</p>
                           <p>
-                            {moment(itemAttr.LaunchDate).format('DD-MMM-YYYY')}
+                            {moment(itemAttr.LaunchDate).format('DD MMMM YYYY')}
                           </p>
                         </div>
                         <div className="boxDetail">
@@ -313,14 +325,11 @@ function Home(props) {
 
                           <p className="h6">
                             1 {itemAttr.token.data.attributes.TokenSymbol} ={' '}
-                            {itemAttr.Hardcap /
-                              itemAttr.token.data.attributes
-                                .TokenForPresale}{' '}
-                            {item.attributes.Currency}
+                            {itemAttr.PriceLaunch} {item.attributes.Currency}
                           </p>
                         </div>
                       </Box>
-                      <ProgressBarMenu item={item} />
+                      {/* <ProgressBarMenu item={item} /> */}
                     </div>
                   </Col>
                 );
