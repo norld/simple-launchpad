@@ -1,4 +1,4 @@
-import 'styles/app.css';
+import 'styles/App.css';
 import Navs from 'components/navbar/Navs';
 import AppRoutes from './Routes';
 import { Provider } from 'react-redux';

@@ -183,7 +183,7 @@ function Footer() {
         </Col>
         <Row
           className="d-flex"
-          style={{ justifyContent: 'space-between' }}
+          style={{ justifyContent: 'space-between', paddingBottom: '50px' }}
           sm={12}
         >
           <Col lg={4}>
