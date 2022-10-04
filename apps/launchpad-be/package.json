@@ -10,11 +10,13 @@
     "strapi": "strapi",
     "clean": "rm -r node_modules & rm pnpm-lock.yaml"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mysql": "^2.18.1"
+  },
   "dependencies": {
-    "@strapi/strapi": "4.2.3",
+    "@strapi/plugin-i18n": "4.2.3",
     "@strapi/plugin-users-permissions": "4.2.3",
-    "@strapi/plugin-i18n": "4.2.3"
+    "@strapi/strapi": "4.2.3"
   },
   "author": {
     "name": "<grymore@gmail.com>"
