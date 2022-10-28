@@ -6,9 +6,9 @@ module.exports = ({ env }) => ({
     connection: {
       host: env("DATABASE_HOST", "127.0.0.1"),
       port: env("DATABASE_PORT", 3306),
-      database: env("DATABASE_NAME", "launchpad-be"),
+      database: env("DATABASE_NAME", "launchpad"),
       user: env("DATABASE_USERNAME", "root"),
-      password: env("DATABASE_PASSWORD", "root"),
+      password: env("DATABASE_PASSWORD", "Kadek123!@#"),
     },
     useNullAsDefault: true,
   },
