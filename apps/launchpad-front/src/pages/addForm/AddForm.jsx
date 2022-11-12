@@ -1,50 +1,50 @@
-import React, { useState, useEffect } from 'react';
-import { Box, Button, Tab } from '@mui/material';
-import { TabContext, TabList, TabPanel } from '@mui/lab';
-import './addForm.css';
-import Page1 from '../../components/page1/Page1';
-import Page2 from '../../components/page2/Page2';
-import Page3 from '../../components/page3/Page3';
-import { useNavigate } from 'react-router-dom';
-import { Container, Row } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
-import { getChainsList } from './storage/addFormActions';
-import { POST } from '../../utils/network/baseRequest.utils';
-import api from '../../utils/network/baseUrl.utils';
+import React, { useState, useEffect } from "react";
+import { Box, Button, Tab } from "@mui/material";
+import { TabContext, TabList, TabPanel } from "@mui/lab";
+import "./addForm.css";
+import Page1 from "../../components/page1/Page1";
+import Page2 from "../../components/page2/Page2";
+import Page3 from "../../components/page3/Page3";
+import { useNavigate } from "react-router-dom";
+import { Container, Row } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { getChainsList } from "./storage/addFormActions";
+import { POST } from "../../utils/network/baseRequest.utils";
+import api from "../../utils/network/baseUrl.utils";
 // import { HeaderAuth } from "../../utils/network/headers.utils";
 
 function AddForm(props) {
-  const [value, setValue] = React.useState('1');
+  const [value, setValue] = React.useState("1");
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [valid, setValid] = useState(false);
   const chainsList = useSelector((state) => state.addFormReducers.chains);
   const [newLaunchpadData, setNewLaunchpadData] = useState({
-    tokenChain: '1',
-    tokenAddress: '',
-    tokenName: '',
-    tokenSymbol: '',
-    tokenTotalSupply: '',
-    tokenSupplyForPresale: '',
-    tokenSupplyForLiquidity: '',
+    tokenChain: "1",
+    tokenAddress: "",
+    tokenName: "",
+    tokenSymbol: "",
+    tokenTotalSupply: "",
+    tokenSupplyForPresale: "",
+    tokenSupplyForLiquidity: "",
     tokenDecimal: 0,
     tokenLogo: null,
-    tokenDescription: '',
-    tokenCurrency: 'WBNB',
-    tokenSaleType: 'Public',
-    tokenSoftcap: '',
-    tokenHardcap: '',
-    tokenMinimumBuy: '',
-    tokenMaximumBuy: '',
-    tokenListing: 'pancakeswap',
-    tokenPriceIDO: '',
-    tokenPriceLaunch: '',
-    tokenWebsite: '',
-    tokenWhitepaper: '',
-    tokenFacebook: '',
-    tokenTwitter: '',
-    tokenTelegram: '',
-    tokenDiscord: '',
+    tokenDescription: "",
+    tokenCurrency: "WBNB",
+    tokenSaleType: "Public",
+    tokenSoftcap: "",
+    tokenHardcap: "",
+    tokenMinimumBuy: "",
+    tokenMaximumBuy: "",
+    tokenListing: "pancakeswap",
+    tokenPriceIDO: "",
+    tokenPriceLaunch: "",
+    tokenWebsite: "",
+    tokenWhitepaper: "",
+    tokenFacebook: "",
+    tokenTwitter: "",
+    tokenTelegram: "",
+    tokenDiscord: "",
   });
 
   const updateInput = (name, value) => {
@@ -64,10 +64,10 @@ function AddForm(props) {
     let flag = true;
     for (const prop in newLaunchpadData) {
       if (
-        prop !== 'tokenFacebook' &&
-        prop !== 'tokenTwitter' &&
-        prop !== 'tokenTelegram' &&
-        prop !== 'tokenDiscord' &&
+        prop !== "tokenFacebook" &&
+        prop !== "tokenTwitter" &&
+        prop !== "tokenTelegram" &&
+        prop !== "tokenDiscord" &&
         !newLaunchpadData[prop]
       ) {
         flag = false;
@@ -84,10 +84,10 @@ function AddForm(props) {
   const sendForm = async (isLoading = false, data = {}) => {
     const exchangeTokens = {
       WBNB: {
-        address: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+        address: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
       },
       BUSD: {
-        address: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
+        address: "0xe9e7cea3dedca5984780bafc599bd69add087d56",
       },
     };
 
@@ -122,9 +122,9 @@ function AddForm(props) {
 
       let formData = new FormData();
 
-      formData.append('files', tokenLogo);
+      formData.append("files", tokenLogo);
       formData.append(
-        'fileInfo',
+        "fileInfo",
         JSON.stringify({
           path: tokenLogo.path,
           name: tokenLogo.name,
@@ -132,8 +132,18 @@ function AddForm(props) {
           type: tokenLogo.type,
         })
       );
+      const headerUpload = {
+        headers: {
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjY4MjU2MjcxLCJleHAiOjE2OTQxNzYyNzF9.nDQRsAk2yw9IF5QnwKhPz8CAsFangxGHyBIrje8hco4",
+        },
+      };
 
-      const upload = await POST(api.BASE_URL + api.ENDPOINT.upload, formData);
+      const upload = await POST(
+        api.BASE_URL + api.ENDPOINT.upload,
+        formData,
+        headerUpload
+      );
 
       const createTokenInfo = await POST(
         api.BASE_URL + api.ENDPOINT.tokenInfo,
@@ -149,16 +159,17 @@ function AddForm(props) {
             TokenDescription: tokenDescription,
             TokenLogo: upload.data[0].id,
             Link: {
-              Website: tokenWebsite ? tokenWebsite : '',
-              Whitepaper: tokenWhitepaper ? tokenWhitepaper : '',
-              Twitter: tokenTwitter ? tokenTwitter : '',
-              Facebook: tokenFacebook ? tokenFacebook : '',
-              Telegram: tokenTelegram ? tokenTelegram : '',
-              Discord: tokenDiscord ? tokenDiscord : '',
+              Website: tokenWebsite ? tokenWebsite : "",
+              Whitepaper: tokenWhitepaper ? tokenWhitepaper : "",
+              Twitter: tokenTwitter ? tokenTwitter : "",
+              Facebook: tokenFacebook ? tokenFacebook : "",
+              Telegram: tokenTelegram ? tokenTelegram : "",
+              Discord: tokenDiscord ? tokenDiscord : "",
             },
             chain: tokenChain,
           },
-        }
+        },
+        headerUpload
       );
 
       const createLaunchpad = await POST(
@@ -175,17 +186,18 @@ function AddForm(props) {
             PriceLaunch: tokenPriceLaunch,
             ExchangeToken: exchangeTokens[tokenCurrency].address,
             SaleType: tokenSaleType,
-            StatusType: ['Verify', 'OnSale'],
+            StatusType: ["Verify", "OnSale"],
             token: createTokenInfo.data.data.id,
           },
-        }
+        },
+        headerUpload
       );
       if (createLaunchpad) {
-        console.log('Creating Launchpad');
+        console.log("Creating Launchpad");
       }
-      navigate('/');
+      navigate("/");
     } catch (error) {
-      console.log(error, '@170');
+      console.log(error, "@170");
     }
   };
 
@@ -195,17 +207,17 @@ function AddForm(props) {
         <Row>
           <div className="col-12">
             <Button
-              onClick={() => navigate('/')}
+              onClick={() => navigate("/")}
               sx={{
                 background:
-                  'linear-gradient(96.51deg, var(--primary-rgb) 2.96%, var(--secondary-rgb) 55.12%) 0% 0% repeat scroll rgba(0, 0, 0, 0)',
-                color: 'white',
-                cursor: 'pointer',
+                  "linear-gradient(96.51deg, var(--primary-rgb) 2.96%, var(--secondary-rgb) 55.12%) 0% 0% repeat scroll rgba(0, 0, 0, 0)",
+                color: "white",
+                cursor: "pointer",
                 m: 2,
-                '&:hover': {
+                "&:hover": {
                   background:
-                    'linear-gradient(96.51deg, var(--primary-rgb) 2.96%, var(--secondary-rgb) 55.12%) 0% 0% repeat scroll rgba(0, 0, 0, 0)',
-                  color: 'white',
+                    "linear-gradient(96.51deg, var(--primary-rgb) 2.96%, var(--secondary-rgb) 55.12%) 0% 0% repeat scroll rgba(0, 0, 0, 0)",
+                  color: "white",
                 },
               }}
             >
@@ -214,8 +226,8 @@ function AddForm(props) {
             <Box
               className="p-5 rounded"
               style={{
-                border: '1px solid rgba(255, 255, 255, 0.2)',
-                background: 'rgba(0,0,0,0.2)',
+                border: "1px solid rgba(255, 255, 255, 0.2)",
+                background: "rgba(0,0,0,0.2)",
               }}
             >
               <TabContext value={value}>
@@ -260,8 +272,8 @@ function AddForm(props) {
               </TabContext>
               <div
                 style={{
-                  display: 'flex',
-                  justifyContent: 'flex-end',
+                  display: "flex",
+                  justifyContent: "flex-end",
                 }}
                 className="mt-5"
               >
@@ -273,18 +285,18 @@ function AddForm(props) {
                   }}
                   className="bg-secondary rounded"
                   style={{
-                    padding: '12px 28px',
-                    border: 'none',
-                    color: 'white',
-                    fontFamily: 'Montserrat',
-                    fontStyle: 'normal',
+                    padding: "12px 28px",
+                    border: "none",
+                    color: "white",
+                    fontFamily: "Montserrat",
+                    fontStyle: "normal",
                     fontWeight: 600,
-                    margin: '0 0 0 1em',
+                    margin: "0 0 0 1em",
                   }}
                 >
                   Back
                 </button>
-                {value === '3' ? (
+                {value === "3" ? (
                   valid ? (
                     <button
                       onClick={() => {
@@ -294,14 +306,14 @@ function AddForm(props) {
                       className="rounded"
                       style={{
                         background:
-                          'linear-gradient(255.52deg, #0294AB -173.55%, #0294AB 71.9%, rgba(60, 89, 190, 0.7) 117.57%)',
-                        padding: '12px 28px',
-                        border: 'none',
-                        color: 'white',
-                        fontFamily: 'Montserrat',
-                        fontStyle: 'normal',
+                          "linear-gradient(255.52deg, #0294AB -173.55%, #0294AB 71.9%, rgba(60, 89, 190, 0.7) 117.57%)",
+                        padding: "12px 28px",
+                        border: "none",
+                        color: "white",
+                        fontFamily: "Montserrat",
+                        fontStyle: "normal",
                         fontWeight: 600,
-                        margin: '0 0 0 1em',
+                        margin: "0 0 0 1em",
                       }}
                     >
                       Send
@@ -316,14 +328,14 @@ function AddForm(props) {
                       className="rounded"
                       style={{
                         background:
-                          'linear-gradient(255.52deg, #0294AB -173.55%, #0294AB 71.9%, rgba(60, 89, 190, 0.7) 117.57%)',
-                        padding: '12px 28px',
-                        border: 'none',
-                        color: 'white',
-                        fontFamily: 'Montserrat',
-                        fontStyle: 'normal',
+                          "linear-gradient(255.52deg, #0294AB -173.55%, #0294AB 71.9%, rgba(60, 89, 190, 0.7) 117.57%)",
+                        padding: "12px 28px",
+                        border: "none",
+                        color: "white",
+                        fontFamily: "Montserrat",
+                        fontStyle: "normal",
                         fontWeight: 600,
-                        margin: '0 0 0 1em',
+                        margin: "0 0 0 1em",
                         opacity: 0.5,
                       }}
                       disabled
@@ -341,14 +353,14 @@ function AddForm(props) {
                     className="rounded"
                     style={{
                       background:
-                        'linear-gradient(255.52deg, #0294AB -173.55%, #0294AB 71.9%, rgba(60, 89, 190, 0.7) 117.57%)',
-                      padding: '12px 28px',
-                      border: 'none',
-                      color: 'white',
-                      fontFamily: 'Montserrat',
-                      fontStyle: 'normal',
+                        "linear-gradient(255.52deg, #0294AB -173.55%, #0294AB 71.9%, rgba(60, 89, 190, 0.7) 117.57%)",
+                      padding: "12px 28px",
+                      border: "none",
+                      color: "white",
+                      fontFamily: "Montserrat",
+                      fontStyle: "normal",
                       fontWeight: 600,
-                      margin: '0 0 0 1em',
+                      margin: "0 0 0 1em",
                     }}
                   >
                     Continue
