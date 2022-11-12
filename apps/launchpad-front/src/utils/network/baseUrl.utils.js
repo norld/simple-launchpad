@@ -4,7 +4,7 @@ const ENDPOINT = {
   launchpad: "/api/launchpads",
   tokenInfo: "/api/token-infos",
   chain: "/api/chains",
-  upload: "/api/upload",
+  upload: "/upload",
   populate: "populate=",
   sortAsc: "&sort[0]=createdAt%3Aasc",
 };
