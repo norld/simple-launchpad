@@ -15,4 +15,5 @@ module.exports = ({ env }) => ({
   admin: {
     autoOpen: true,
   },
+  url: "https://app.grymore.xyz",
 });
