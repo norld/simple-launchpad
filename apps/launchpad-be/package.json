@@ -14,9 +14,10 @@
     "mysql": "^2.18.1"
   },
   "dependencies": {
-    "@strapi/plugin-i18n": "4.4.5",
-    "@strapi/plugin-users-permissions": "4.4.5",
-    "@strapi/strapi": "4.4.5"
+    "@strapi/plugin-i18n": "4.5.0",
+    "@strapi/plugin-users-permissions": "4.5.0",
+    "@strapi/strapi": "4.5.0",
+    "@strapi/plugin-documentation": "4.5.0"
   },
   "author": {
     "name": "<grymore@gmail.com>"
